@@ -1,140 +1,15 @@
-@font-face {
-    font-family: 'Ubuntu';
-    src: url('./fonts/ubuntu-light-webfont.woff2') format('woff2'),
-         url('./fonts/ubuntu-light-webfont.woff') format('woff');
-    font-weight: 300;
-    font-style: normal;
-
-}
-
-
-
-
-@font-face {
-    font-family: 'Ubuntu';
-    src: url('./fonts/ubuntu-medium-webfont.woff2') format('woff2'),
-         url('./fonts/ubuntu-medium-webfont.woff') format('woff');
-    font-weight: 500;
-    font-style: normal;
-
-}
-
-
-
-
-@font-face {
-    font-family: 'Gagalin';
-    src: url('./fonts/gagalin-regular-webfont.woff2') format('woff2'),
-         url('./fonts/gagalin-regular-webfont.woff') format('woff');
-    font-weight: 400;
-    font-style: normal;
-
-}
-
-
-
-
-@font-face {
-    font-family: 'Lifehack';
-    src: url('./fonts/lifehack_medium-webfont.woff2') format('woff2'),
-         url('./fonts/lifehack_medium-webfont.woff') format('woff');
-    font-weight: 500;
-    font-style: normal;
-
-}
-
-html, body {
-    height: 100%;
-    font-family: "Ubuntu", Helvetica, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    
-}
-
-body {
-    margin: 0;
-    color: white;
-}
-
-* {
-    box-sizing: border-box;
-}
-
-ul {
-    margin: 0;
-    padding: 0;
-}
-
-p {
-    margin: 0;
-}
-
-ul li {
-    list-style: none;
-}
-
-button {
-    background: transparent;
-    cursor: pointer;
-    border: none;
-}
-
-h1, h2, h3, h4, h5, h6 {
-    margin: 0;
-    font-weight: normal;
-}
-
-.wrapper {
-    overflow: hidden;
-    min-height: 100%;
-    display: flex;
-    flex-direction: column;
-}
-
-.wrapper__content {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-}
-
-.section {
-    display: flex;
-    flex-direction: column;
-    min-height: 650px;
-    height: 100vh;
-    background: center center no-repeat;
-}
-
 .hero {
-    background-image: url('./img/hero/section_1.png');
+    background-image: url('../img/hero/section_1.png');
     background-size: cover;
 }
 
 .best {
-    background-image: url('./img/best/section_2.png');
+    background-image: url('../img/best/section_2.png');
     background-size: cover;
 }
 
 .reviews {
     background: black;
-}
-
-.container {
-    display: flex;
-    margin: 0 auto;
-    padding: 13px;
-    max-width: 950px;
-}
-
-.header__col {
-    display: flex;
-    align-items: center;
-    flex: 1;
-    /* flex-wrap: wrap; */
-}
-
-.header__col--align-right {
-    justify-content: flex-end;
 }
 
 .menu__list {
@@ -152,15 +27,16 @@ h1, h2, h3, h4, h5, h6 {
 
 .menu__link {
     padding: 10px 0;
+    font-family: Ubuntu;
     font-size: 13px;
     font-weight: 500;
-    line-height: 30px;
     color: #fff;
     text-transform: uppercase;
     text-decoration: none;
 }
 
 .btn {
+    font-family: Ubuntu;
     color: #ffffff;
     line-height: 30px;
     font-weight: 500;
@@ -171,7 +47,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .hero__btn-order {
-    background-color: #e45028;
+    background-color: $orange;
     margin-left: 15px;
 }
 
@@ -221,12 +97,20 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .page__container {
-    
+    max-width: 950px;
     padding-bottom: 0;
     padding-top: 0;
     flex: 1;
     flex-direction: column;
-    justify-content: space-between;
+}
+
+.header__container {
+    max-width: 950px;
+}
+
+.page__container-width100 {
+    padding: 0;
+    width: 100%;
 }
 
 .hero__content {
@@ -236,37 +120,36 @@ h1, h2, h3, h4, h5, h6 {
     flex: 1;
 }
 
-.hero__footer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.hero__content-text {
+    margin-left: 15px;
 }
 
 .hero__burger-pic {
     padding-left: 25px;
     display: block;
     max-width: 100%;
-    background: url('./img/hero/hamburger-bg.png') center 38% no-repeat;
+    background: url('../img/hero/hamburger-bg.png') center 38% no-repeat;
     background-size: contain;
 }
 
-.section-title {
-    font-size: 72px;
-    font-family: Gagalin;
-    font-weight: 400;
-    text-transform: uppercase;
-    margin-bottom: 45px;
-}
-
 .section-title--hero {
-    color: #f9b43b;
+    color: $yellow;
 }
 
 .hero__content-desc {
+    padding-right: 20px;
     font-family: Lifehack;
     font-size: 65px;
+    letter-spacing: -1.63px;
+    line-height: 65px;
     font-weight: 500;
     color: #fff;
+}
+
+.hero__footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .next-section {
@@ -301,7 +184,7 @@ h1, h2, h3, h4, h5, h6 {
     justify-content: center;
     align-items: center;
     flex: 1;
-    color: #2f3234;
+    color: $black;
 }
 
 .best__list {
@@ -316,6 +199,20 @@ h1, h2, h3, h4, h5, h6 {
     align-items: center;
     text-align: center;
     margin-right: 15px;
+}
+
+.best__desc-title {
+    font-family: Lifehack;
+    font-size: 24px;
+    letter-spacing: -0.6px;
+}
+
+.best__desc-content {
+    font-family: Ubuntu;
+    opacity: 0.8;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 24px;
 }
 
 .best__item:last-child {
@@ -352,6 +249,7 @@ h1, h2, h3, h4, h5, h6 {
     background: rgba(0, 0, 0, 0.5);
     color: #fff;
     opacity: 0;
+    font-size: 14px;
     transition: opacity .3s;
 }
 
@@ -361,19 +259,17 @@ h1, h2, h3, h4, h5, h6 {
 
 .reviews__title {
     font-family: Gagalin;
-    font-size: 14px;
-    font-weight: 400;
 }
 
 .reviews__text {
     font-family: Ubuntu;
-    font-size: 14px;
     font-weight: 300;
     margin-top: 30px;
+    line-height: 24px;
 }
 
 .reviews__btn-detailed {
-    background-color: #2f3234;
+    background-color: $black;
     margin-top: 30px; 
 }
 
