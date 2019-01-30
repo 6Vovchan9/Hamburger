@@ -1,13 +1,13 @@
 .hero {
-  background-image: url("./img/hero/section_1.png");
+  background-image: url("../img/hero/section_1.png");
   background-size: cover; }
 
 .best {
-  background-image: url("./img/best/section_2.png");
+  background-image: url("../img/best/section_2.png");
   background-size: cover; }
 
 .reviews {
-  background: black; }
+  background: #2f3234; }
 
 .menu__list {
   display: -webkit-box;
@@ -23,14 +23,15 @@
 
 .menu__link {
   padding: 10px 0;
+  font-family: Ubuntu;
   font-size: 13px;
   font-weight: 500;
-  line-height: 30px;
   color: #fff;
   text-transform: uppercase;
   text-decoration: none; }
 
 .btn {
+  font-family: Ubuntu;
   color: #ffffff;
   line-height: 30px;
   font-weight: 500;
@@ -92,6 +93,7 @@
   transform: translate(-50%, -50%); }
 
 .page__container {
+  max-width: 970px;
   padding-bottom: 0;
   padding-top: 0;
   -webkit-box-flex: 1;
@@ -100,10 +102,14 @@
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between; }
+  flex-direction: column; }
+
+.header__container {
+  max-width: 970px; }
+
+.page__container-width100 {
+  padding: 0;
+  width: 100%; }
 
 .hero__content {
   display: -webkit-box;
@@ -119,6 +125,28 @@
   -ms-flex: 1;
   flex: 1; }
 
+.hero__content-text {
+  margin-left: 15px; }
+
+.hero__burger-pic {
+  padding-left: 25px;
+  display: block;
+  max-width: 100%;
+  background: url("../img/hero/hamburger-bg.png") center 38% no-repeat;
+  background-size: contain; }
+
+.section-title--hero {
+  color: #f9b43b; }
+
+.hero__content-desc {
+  padding-right: 20px;
+  font-family: Lifehack;
+  font-size: 65px;
+  letter-spacing: -1.63px;
+  line-height: 65px;
+  font-weight: 500;
+  color: #fff; }
+
 .hero__footer {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -129,29 +157,6 @@
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center; }
-
-.hero__burger-pic {
-  padding-left: 25px;
-  display: block;
-  max-width: 100%;
-  background: url("./img/hero/hamburger-bg.png") center 38% no-repeat;
-  background-size: contain; }
-
-.section-title {
-  font-size: 72px;
-  font-family: Gagalin;
-  font-weight: 400;
-  text-transform: uppercase;
-  margin-bottom: 45px; }
-
-.section-title--hero {
-  color: #f9b43b; }
-
-.hero__content-desc {
-  font-family: Lifehack;
-  font-size: 65px;
-  font-weight: 500;
-  color: #fff; }
 
 .next-section {
   padding-top: 20px;
@@ -222,6 +227,18 @@
   text-align: center;
   margin-right: 15px; }
 
+.best__desc-title {
+  font-family: Lifehack;
+  font-size: 24px;
+  letter-spacing: -0.6px; }
+
+.best__desc-content {
+  font-family: Ubuntu;
+  opacity: 0.8;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 24px; }
+
 .best__item:last-child {
   margin: 0; }
 
@@ -262,6 +279,7 @@
   background: rgba(0, 0, 0, 0.5);
   color: #fff;
   opacity: 0;
+  font-size: 14px;
   -webkit-transition: opacity .3s;
   -o-transition: opacity .3s;
   transition: opacity .3s; }
@@ -270,15 +288,13 @@
   opacity: 1; }
 
 .reviews__title {
-  font-family: Gagalin;
-  font-size: 14px;
-  font-weight: 400; }
+  font-family: Gagalin; }
 
 .reviews__text {
   font-family: Ubuntu;
-  font-size: 14px;
   font-weight: 300;
-  margin-top: 30px; }
+  margin-top: 30px;
+  line-height: 24px; }
 
 .reviews__btn-detailed {
   background-color: #2f3234;
