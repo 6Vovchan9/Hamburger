@@ -299,6 +299,8 @@
 .reviews__text {
   font-family: Ubuntu;
   font-weight: 300;
+  height: 62%;
+  overflow: hidden;
   margin-top: 30px;
   line-height: 24px; }
 

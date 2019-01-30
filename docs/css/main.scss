@@ -258,6 +258,9 @@
     opacity: 0;
     font-size: 14px;
     transition: opacity .3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .reviews__item-hover:hover {
@@ -271,13 +274,15 @@
 .reviews__text {
     font-family: Ubuntu;
     font-weight: 300;
-    margin-top: 30px;
+    max-height: 62%;
+    overflow: hidden;
+    // margin-top: 30px;
     line-height: 24px;
 }
 
 .reviews__btn-detailed {
     background-color: #2f3234;
-    margin-top: 35px; 
+    // margin-top: 35px; 
 }
 
 .footer {
