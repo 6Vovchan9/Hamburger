@@ -17,7 +17,7 @@
 }
 
 .menu__item {
-    margin-left: 30px;
+    margin-left: 35px;
     list-style: disc;
 }
 
@@ -42,7 +42,7 @@
     font-weight: 500;
     font-size: 13px;
     border-radius: 5px;
-    padding: 2px 20px;
+    padding: 2px 15px;
     text-transform: uppercase;
 }
 
@@ -121,12 +121,13 @@
 }
 
 .hero__content-text {
-    margin-left: 15px;
+    margin-left: 25px;
 }
 
 .hero__burger-pic {
     padding-left: 25px;
     display: block;
+    margin-bottom: 100px;
     max-width: 100%;
     background: url('../img/hero/hamburger-bg.png') center 38% no-repeat;
     background-size: contain;
@@ -185,6 +186,7 @@
     align-items: center;
     flex: 1;
     color: #2f3234;
+    padding-bottom: 50px;
 }
 
 .best__list {
@@ -201,10 +203,15 @@
     margin-right: 15px;
 }
 
+.best__img {
+    margin-bottom: 30px;
+}
+
 .best__desc-title {
     font-family: Lifehack;
     font-size: 24px;
     letter-spacing: -0.6px;
+    margin-bottom: 15px;
 }
 
 .best__desc-content {
@@ -270,7 +277,7 @@
 
 .reviews__btn-detailed {
     background-color: #2f3234;
-    margin-top: 30px; 
+    margin-top: 35px; 
 }
 
 .footer {
