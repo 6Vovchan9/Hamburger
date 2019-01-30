@@ -126,7 +126,7 @@
   flex: 1; }
 
 .hero__content-text {
-  margin-left: 25px; }
+  margin-bottom: 25px; }
 
 .hero__burger-pic {
   padding-left: 25px;
@@ -288,7 +288,17 @@
   font-size: 14px;
   -webkit-transition: opacity .3s;
   -o-transition: opacity .3s;
-  transition: opacity .3s; }
+  transition: opacity .3s;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between; }
 
 .reviews__item-hover:hover {
   opacity: 1; }
@@ -299,14 +309,12 @@
 .reviews__text {
   font-family: Ubuntu;
   font-weight: 300;
-  height: 62%;
+  max-height: 62%;
   overflow: hidden;
-  margin-top: 30px;
   line-height: 24px; }
 
 .reviews__btn-detailed {
-  background-color: #2f3234;
-  margin-top: 35px; }
+  background-color: #2f3234; }
 
 .footer {
   background: blue; }
