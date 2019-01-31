@@ -11,6 +11,10 @@
 .reviews {
     background: #2f3234;
 }
+.order {
+    background-image: url('../img/order/section_4.png');
+    background-size: cover;
+}
 
 .menu__list {
     display: flex;
@@ -38,11 +42,10 @@
 .btn {
     font-family: Ubuntu;
     color: #ffffff;
-    line-height: 30px;
     font-weight: 500;
     font-size: 13px;
     border-radius: 5px;
-    padding: 2px 15px;
+    padding: 10px 15px;
     text-transform: uppercase;
 }
 
@@ -97,11 +100,13 @@
 }
 
 .page__container {
+    width: 100%;
     max-width: 970px;
     padding-bottom: 0;
     padding-top: 0;
     flex: 1;
     flex-direction: column;
+    justify-content: center;
 }
 
 .header__container {
@@ -109,6 +114,7 @@
 }
 
 .page__container-width100 {
+    flex: 1;
     padding: 0;
     width: 100%;
 }
@@ -121,19 +127,20 @@
 }
 
 .hero__content-text {
-    margin-bottom: 25px;
+    padding-left: 10px;
+    padding-bottom: 25px;
 }
 
 .hero__burger-pic {
-    padding-left: 25px;
+    padding-left: 35px;
     display: block;
-    margin-bottom: 100px;
+    padding-bottom: 100px;
     max-width: 100%;
     background: url('../img/hero/hamburger-bg.png') center 38% no-repeat;
     background-size: contain;
 }
 
-.section-title--hero {
+.section-title--hero, .section-title--order {
     color: #f9b43b;
 }
 
@@ -186,7 +193,7 @@
     align-items: center;
     flex: 1;
     color: #2f3234;
-    padding-bottom: 50px;
+    margin-bottom: 50px;
 }
 
 .best__list {
@@ -201,6 +208,10 @@
     align-items: center;
     text-align: center;
     margin-right: 15px;
+
+    &:last-child {
+        margin: 0;
+    }
 }
 
 .best__img {
@@ -222,10 +233,6 @@
     line-height: 24px;
 }
 
-.best__item:last-child {
-    margin: 0;
-}
-
 .reviews__content {
     display: flex;
     flex: 1;
@@ -244,6 +251,13 @@
     height: 50%;
     background: center center / cover no-repeat;
     position: relative;
+
+    &:hover {
+        .reviews__item-hover {
+            opacity: 1;
+
+        }
+    }
 }
 
 .reviews__item-hover {
@@ -261,10 +275,12 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-}
 
-.reviews__item-hover:hover {
-    opacity: 1;
+    &:hover {
+        .reviews__item-hover {
+            opacity: 1;
+        }
+    }
 }
 
 .reviews__title {
@@ -283,6 +299,66 @@
 .reviews__btn-detailed {
     background-color: #2f3234;
     // margin-top: 35px; 
+}
+
+.form {
+    display: flex;
+    font-family: Ubuntu;
+    font-size: 14px;
+    color: #fff;
+}
+
+.form__col {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    margin-right: 20px;
+
+    &:last-child {
+        margin: 0;
+    }
+}
+
+.form__row {
+    display: flex;
+    margin-bottom: 20px;
+
+    &:last-child {
+        margin: 0;
+    }
+}
+
+.form__block {
+    flex: 1;
+    padding-right: 20px;
+
+    &:last-child {
+        padding-right: 0;
+    }
+}
+
+.form__block-title {
+    padding-bottom: 7px;
+}
+
+.form__block-input {
+    border: 2px solid #d1cfcb;
+    border-radius: 5px;
+    padding: 7px;
+    width: 100%;
+    outline: none;
+
+    &::placeholder {
+        font-size: 14px;
+        font-weight: 300;
+        opacity: 0.5;
+        color: black;
+    }
+    
+    &:focus {
+        border: 2px solid #f9b43b;
+        box-shadow: inset 0 0 14px 2px #f9b43b;
+    }
 }
 
 .footer {
