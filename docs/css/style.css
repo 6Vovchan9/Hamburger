@@ -337,6 +337,9 @@ html, body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
 
+html {
+  font-size: 16px; }
+
 body {
   margin: 0;
   color: white; }
@@ -426,7 +429,7 @@ table {
   justify-content: flex-end; }
 
 .section-title {
-  font-size: 72px;
+  font-size: 4.5rem;
   font-family: Gagalin;
   font-weight: 400;
   text-transform: uppercase;
@@ -463,7 +466,7 @@ table {
 .menu__link {
   padding: 10px 0;
   font-family: Ubuntu;
-  font-size: 13px;
+  font-size: 0.8125rem;
   font-weight: 500;
   color: #fff;
   text-transform: uppercase;
@@ -473,7 +476,7 @@ table {
   font-family: Ubuntu;
   color: #ffffff;
   font-weight: 500;
-  font-size: 13px;
+  font-size: 0.8125rem;
   border-radius: 5px;
   padding: 10px 15px;
   text-transform: uppercase; }
@@ -577,8 +580,9 @@ table {
 .hero__burger-pic {
   padding-left: 35px;
   display: block;
-  padding-bottom: 100px;
+  padding-bottom: 6.25rem;
   max-width: 100%;
+  max-height: 100%;
   background: url("../img/hero/hamburger-bg.png") center 38% no-repeat;
   background-size: contain; }
 
@@ -588,7 +592,7 @@ table {
 .hero__content-desc {
   padding-right: 20px;
   font-family: Lifehack;
-  font-size: 65px;
+  font-size: 4.0625rem;
   letter-spacing: -1.63px;
   line-height: 65px;
   font-weight: 500;
@@ -660,8 +664,8 @@ table {
 
 .best__item {
   -webkit-box-flex: 1;
-  -ms-flex: 1 0 200px;
-  flex: 1 0 200px;
+  -ms-flex: 1 0 180px;
+  flex: 1 0 180px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -682,14 +686,14 @@ table {
 
 .best__desc-title {
   font-family: Lifehack;
-  font-size: 24px;
+  font-size: 1.5rem;
   letter-spacing: -0.6px;
   margin-bottom: 15px; }
 
 .best__desc-content {
   font-family: Ubuntu;
   opacity: 0.8;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 300;
   line-height: 24px; }
 
@@ -712,11 +716,10 @@ table {
   flex-wrap: wrap; }
 
 .reviews__item {
-  width: 25%;
+  width: calc(100%/4);
   min-width: 200px;
   -webkit-filter: grayscale(100%);
   filter: grayscale(100%);
-  height: 50%;
   background: center center / cover no-repeat;
   position: relative; }
   .reviews__item:hover .reviews__item-hover {
@@ -732,7 +735,7 @@ table {
   background: rgba(0, 0, 0, 0.5);
   color: #fff;
   opacity: 0;
-  font-size: 14px;
+  font-size: 0.875rem;
   -webkit-transition: opacity .3s;
   -o-transition: opacity .3s;
   transition: opacity .3s;
@@ -767,7 +770,7 @@ table {
   display: -ms-flexbox;
   display: flex;
   font-family: Ubuntu;
-  font-size: 14px;
+  font-size: 0.875rem;
   color: #fff; }
 
 .form__col {
@@ -811,22 +814,22 @@ table {
   width: 100%;
   outline: none; }
   .form__block-input::-webkit-input-placeholder {
-    font-size: 14px;
+    font-size: 0.875rem;
     font-weight: 300;
     opacity: 0.5;
     color: black; }
   .form__block-input:-ms-input-placeholder {
-    font-size: 14px;
+    font-size: 0.875rem;
     font-weight: 300;
     opacity: 0.5;
     color: black; }
   .form__block-input::-ms-input-placeholder {
-    font-size: 14px;
+    font-size: 0.875rem;
     font-weight: 300;
     opacity: 0.5;
     color: black; }
   .form__block-input::placeholder {
-    font-size: 14px;
+    font-size: 0.875rem;
     font-weight: 300;
     opacity: 0.5;
     color: black; }
@@ -837,3 +840,26 @@ table {
 
 .footer {
   background: blue; }
+
+@media (max-width: 768px) {
+  .menu {
+    display: none; }
+  .hero__content-img {
+    height: 60%; }
+  .hero__content-desc {
+    text-align: center; }
+  .hero__burger-pic {
+    padding-bottom: 1rem; }
+  .hero__content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column; }
+  .reviews__item {
+    width: calc(100%/2); } }
+
+@media (max-width: 480px) {
+  html {
+    font-size: 14px; }
+  .page__container {
+    max-width: 450px; } }
