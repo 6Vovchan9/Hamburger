@@ -373,6 +373,9 @@
 }
 
 @media (max-width: 768px) {
+    .dropdown {
+        display: block;
+    }
     .menu {
         display: none;
     }
