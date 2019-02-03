@@ -1,0 +1,27 @@
+.contacts {
+    display: flex;
+    flex-direction: column;
+    font-family: Ubuntu;
+    font-size: rem(14px);
+    font-style: normal;
+}
+
+.contacts__address {
+    font-weight: 300;
+}
+
+.contacts__phone {
+    display: flex;
+    align-items: center;
+}
+
+.contacts__phone-icon {
+    width: 11px;
+    height: 11px;
+}
+
+.contacts__phone-num {
+    color: $orange;
+    font-weight: 500;
+    text-decoration: none;
+}

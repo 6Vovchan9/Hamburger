@@ -8,28 +8,51 @@
     background-size: cover;
 }
 
-.reviews {
-    background: #2f3234;
+.team {
+    background-image: url('../img/team/section_5.png');
+    background-size: cover;
 }
+
+.menu {
+    background-image: url('../img/menu/section_6.png');
+    background-size: cover;
+}
+
+.reviews {
+    background: $black;
+}
+
 .order {
     background-image: url('../img/order/section_4.png');
     background-size: cover;
 }
 
-.menu__list {
+.yandex-map {
+    flex: 1;
+    background-image: url('../img/map/map.png');
+    background-size: cover;
+}
+
+.logo__image {
+    width: 99px;
+    height: 75px;
+    display: block;
+}
+
+.nav__list {
     display: flex;
 }
 
-.menu__item {
-    margin-left: 35px;
+.nav__item {
+    margin-left: rem(35px);
     list-style: disc;
 }
 
-.menu__item:first-child {
+.nav__item:first-child {
     list-style: none;
 }
 
-.menu__link {
+.nav__link {
     padding: 10px 0;
     font-family: Ubuntu;
     font-size: 0.8125rem;
@@ -45,12 +68,12 @@
     font-weight: 500;
     font-size: 0.8125rem;
     border-radius: 5px;
-    padding: 10px 15px;
+    padding: rem(10px) rem(15px);
     text-transform: uppercase;
 }
 
 .hero__btn-order {
-    background-color: #e45028;
+    background-color: $orange;
     margin-left: 15px;
 }
 
@@ -142,7 +165,7 @@
 }
 
 .section-title--hero, .section-title--order {
-    color: #f9b43b;
+    color: $yellow;
 }
 
 .hero__content-desc {
@@ -193,7 +216,7 @@
     justify-content: center;
     align-items: center;
     flex: 1;
-    color: #2f3234;
+    color: $black;
     margin-bottom: 50px;
 }
 
@@ -216,6 +239,8 @@
 }
 
 .best__img {
+    width: 97px;
+    height: 90px;
     margin-bottom: 30px;
 }
 
@@ -298,7 +323,7 @@
 }
 
 .reviews__btn-detailed {
-    background-color: #2f3234;
+    background-color: $black;
     // margin-top: 35px; 
 }
 
@@ -357,13 +382,9 @@
     }
     
     &:focus {
-        border: 2px solid #f9b43b;
-        box-shadow: inset 0 0 14px 2px #f9b43b;
+        border: 2px solid $yellow;
+        box-shadow: inset 0 0 14px 2px $yellow;
     }
-}
-
-.footer {
-    background: blue;
 }
 
 @media (max-width: 992px) {
@@ -372,8 +393,11 @@
     // }
 }
 
-@media (max-width: 768px) {
-    .menu {
+@media (max-width: $tablets) {
+    .dropdown {
+        display: block;
+    }
+    .nav {
         display: none;
     }
     .hero__content-img {
@@ -394,13 +418,16 @@
     .reviews__item {
         width: calc(100%/2);
     }
+    .pagination {
+        display: none;
+    }
 }
 
-@media (max-width: 480px) {
+@media (max-width: $phones) {
     html {
         font-size: 14px;
     }
-    .page__container {
-        max-width: 450px;
-    }
+    // .page__container {
+    //     max-width: 450px;
+    // }
 }
