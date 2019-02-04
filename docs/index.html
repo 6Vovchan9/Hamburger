@@ -336,35 +336,35 @@
                             <div class="form__row">
                                 <label class="form__block">
                                     <div class="form__block-title">Имя</div>
-                                    <input type="text" placeholder="Введите имя" class="form__block-input">
+                                    <input name="client_name" type="text" placeholder="Введите имя" class="form__block-input">
                                 </label>
                                 <label class="form__block">
                                     <div class="form__block-title">Телефон</div>
-                                    <input type="text" class="form__block-input">
+                                    <input name="client_phone" type="text" class="form__block-input">
                                 </label>
                             </div>
                             <div class="form__row">
                                 <label class="form__block">
                                     <div class="form__block-title">Улица</div>
-                                    <input type="text" class="form__block-input">
+                                    <input name="client_street" type="text" class="form__block-input">
                                 </label>
                             </div>
                             <div class="form__row">
                                 <label class="form__block">
                                     <div class="form__block-title">Дом</div>
-                                    <input type="text" class="form__block-input">
+                                    <input name="client_house" type="text" class="form__block-input">
                                 </label>
                                 <label class="form__block">
                                     <div class="form__block-title">Корпус</div>
-                                    <input type="text" class="form__block-input">
+                                    <input name="client_house-building" type="text" class="form__block-input">
                                 </label>
                                 <label class="form__block">
                                     <div class="form__block-title">Квартира</div>
-                                    <input type="text" class="form__block-input">
+                                    <input name="client_flat" type="text" class="form__block-input">
                                 </label>
                                 <label class="form__block">
                                     <div class="form__block-title">Этаж</div>
-                                    <input type="text" class="form__block-input">
+                                    <input name="client_floor" type="text" class="form__block-input">
                                 </label>
                             </div>
                         </div>
@@ -372,22 +372,29 @@
                             <div class="form__row">
                                 <label class="form__block">
                                     <div class="form__block-title">Комментарий</div>
-                                    <textarea name="comment" placeholder="Мне понравилось" class="form__block-input form__block-input--comment"></textarea>
+                                    <textarea name="client_comment" placeholder="Мне понравилось" class="form__block-input form__block-input--comment"></textarea>
                                 </label>
                             </div>
                             <div class="form__row">                            
                                 <div class="form__controls">
                                     <label class="form__controls-btn">
-                                        <input type="radio" name="photo" value="yes" checked class="form__controls-real-radio">
+                                        <input type="radio" name="cash/card" value="cash" checked class="form__controls-real-radio">
                                         <div class="form__controls-fake-radio"></div>
                                         <div class="form__controls-btn-title">Да</div>
                                     </label>
                                     <label class="form__controls-btn">
-                                        <input type="radio" name="photo" value="no" class="form__controls-real-radio">
+                                        <input type="radio" name="cash/card" value="card" class="form__controls-real-radio">
                                         <div class="form__controls-fake-radio"></div>
                                         <div class="form__controls-btn-title">Нет</div>
                                     </label>
                                 </div>
+                            </div>
+                            <div class="form__row">
+                                <label class="form__inline-block">
+                                    <div class="form__checkbox-title">Не перезванивать</div>
+                                    <input name="recall" value="no" type="checkbox" class="form__checkbox-real">
+                                    <div class="form__checkbox-fake"></div>
+                                </label>
                             </div>
                         </div>
                     </div>

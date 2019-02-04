@@ -29,7 +29,8 @@
         color: $yellow;
     }
     .menu-acco__content {
-        width: 40vw;
+        max-width: 40vw;
+        width: 100%;
         padding: 10% 10%;
     }
 }

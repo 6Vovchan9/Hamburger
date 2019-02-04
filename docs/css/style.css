@@ -691,7 +691,8 @@ table {
   color: #f9b43b; }
 
 .menu-acco__item--active .menu-acco__content {
-  width: 40vw;
+  max-width: 40vw;
+  width: 100%;
   padding: 10% 10%; }
 
 .menu-acco__trigger {
@@ -1129,6 +1130,15 @@ table {
   .form__block:last-child {
     padding-right: 0; }
 
+.form__inline-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+  -ms-flex-direction: row-reverse;
+  flex-direction: row-reverse; }
+
 .form__block-title {
   padding-bottom: 7px; }
 
@@ -1175,11 +1185,59 @@ table {
     display: -ms-flexbox;
     display: flex; }
 
+.form__controls-real-radio {
+  display: none; }
+
 .form__controls-fake-radio {
   width: 15px;
   height: 15px;
   border-radius: 50%;
-  background-color: #fff; }
+  background-color: #fff;
+  position: relative; }
+
+.form__controls-fake-radio:before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  content: "";
+  width: 0px;
+  height: 0px;
+  border-radius: 50%;
+  background-color: #e35028; }
+
+.form__controls-real-radio:checked ~ .form__controls-fake-radio:before {
+  width: 7.5px;
+  height: 7.5px; }
+
+.form__checkbox-real {
+  display: none; }
+
+.form__checkbox-fake {
+  width: 15px;
+  height: 15px;
+  background-color: #fff;
+  position: relative;
+  border-radius: 5px; }
+
+.form__checkbox-fake:before {
+  content: "";
+  display: none;
+  width: 11px;
+  height: 9px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  background: center center no-repeat;
+  background-image: url("../img/order/checkbox.png"); }
+
+.form__checkbox-real:checked ~ .form__checkbox-fake:before {
+  display: initial; }
 
 @media (max-width: 768px) {
   .dropdown {
