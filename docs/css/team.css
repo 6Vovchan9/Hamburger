@@ -1,0 +1,77 @@
+.team {
+  position: relative; }
+
+.team__content {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 50%;
+  background-color: #2f3234;
+  opacity: 0.93;
+  padding: 5% 2% 0 7%;
+  color: #fff;
+  font-size: rem(14px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column; }
+
+.team-acco__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  position: relative; }
+
+.team-acco__item:before {
+  content: "";
+  position: absolute;
+  background: center center no-repeat;
+  width: 9px;
+  height: 9px;
+  top: 4px;
+  left: -5%;
+  display: block;
+  background-image: url("../../img/team/Polygon_1.jpg"); }
+
+.team-acco__item--active .team-acco__trigger {
+  color: #f9b43b; }
+
+.team-acco__item--active .team-acco__content {
+  height: auto; }
+
+.team-acco__trigger {
+  color: inherit;
+  font-family: Gagalin;
+  font-weight: 400;
+  text-decoration: none; }
+
+.team-acco__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 0;
+  overflow: hidden; }
+
+.team-acco__pic {
+  padding-right: rem(20px); }
+
+.team-acco__img {
+  width: rem(100px);
+  height: rem(100px);
+  border-radius: 50%;
+  background: center center no-repeat / cover; }
+
+.team-acco__text {
+  font-family: Ubuntu;
+  font-weight: 300; }
+
+.team-acco__title {
+  font-weight: 500; }

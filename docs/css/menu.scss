@@ -1,0 +1,82 @@
+.menu {
+    position: relative;
+}
+
+.section-title--menu {
+    position: absolute;
+    top: rem(40px);
+    left: rem(40px);
+}
+
+.menu__content {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    display: flex;
+}
+
+.menu__acco {
+    display: flex;
+}
+
+.menu-acco__item {
+    display: flex;
+}
+
+.menu-acco__item--active {
+    .menu-acco__trigger-text {
+        color: $yellow;
+    }
+    .menu-acco__content {
+        max-width: 40vw;
+        width: 100%;
+        padding: 10% 10%;
+    }
+}
+
+.menu-acco__trigger{
+    background: center center no-repeat / cover;
+    // filter: grayscale(80%);
+    display: flex;
+    min-width: rem(80px);
+    position: relative;
+}
+
+.menu-acco__trigger-bg {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(20, 20, 20, 0.7);
+}
+
+.menu-acco__trigger-text {
+    position: absolute;
+    top: 95%;
+    transform: translateX(7%) rotate(-90deg);
+    transform-origin: top left;
+    font-family: Gagalin;
+    font-weight: 400;
+    color: #fff;
+    font-size: rem(40px);
+    white-space: nowrap;
+}
+
+.menu-acco__content {
+    background: rgba(47, 50, 52, 0.93);
+    width: 0;
+    // padding: 10% 10%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.menu-acco__text {
+    font-family: Ubuntu;
+    font-weight: 300;
+    font-size: rem(14px);
+    line-height: rem(24px);
+    max-height: 100%;
+    overflow: hidden;
+}

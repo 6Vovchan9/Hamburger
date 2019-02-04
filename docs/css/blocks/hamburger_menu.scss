@@ -1,0 +1,107 @@
+.dropdown {
+    margin-left: 20px;
+    cursor: pointer;
+    position: relative;
+    display: none;
+}
+
+.dropdown__hamburger {
+    margin: 13px 0;
+    width: 34px;
+    height: 4px;
+    background-color: #fff;
+    border-radius: 2px;
+    position: relative;
+}
+
+.dropdown__hamburger:after, .dropdown__hamburger:before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 34px;
+    height: 4px;
+    background-color: #fff;
+    border-radius: 2px;
+}
+.dropdown__hamburger:after {
+    top: 100%;
+    margin-top: 8px;
+}
+
+.dropdown__hamburger:before {
+    bottom: 100%;
+    margin-bottom: 8px;
+}
+
+.dropdown__menu {
+    position: absolute;
+    width: 200px;
+    background-color: pink;
+    border: 2px solid black;
+    top: 100%;
+    z-index: 20;
+    left: -9999px;
+    margin-top: 35px;
+    opacity: 0;
+    transition: opacity 1s;
+    
+}
+
+.dropdown__menu:before {
+    content: "";
+    display: block;
+    height: 50px;
+    left: 0;
+    right: 0;/*Расстягивает этот блок на всю ширину блока dropdown__menu */
+    top: -49px;
+    position: absolute;
+    
+}
+
+.dropdown__triangle {
+    width: 70px;
+    height: 36px;
+    background: transparent;
+    position: absolute;
+    bottom: 100%;
+    overflow: hidden;
+}
+
+.dropdown__triangle:after {
+    content: "";
+    display: block;
+    width: 48px;
+    height: 48px;
+    transform: rotate(45deg);
+    background-color: black;
+    position: absolute;
+    top: 10px;
+    left: 12px;
+    box-shadow: 0 0 5px #000;
+}
+
+.dropdown__triangle:before {
+    content: "";
+    display: block;
+    width: 48px;
+    height: 48px;
+    transform: rotate(45deg);
+    background-color: pink;
+    position: absolute;
+    top: 14px;
+    left: 12px;
+    z-index: 10;
+}
+
+.dropdown__content {
+    box-shadow: 0 0 20px 5px #000;
+}
+
+.dropdown__list {
+    padding: 10px;
+}
+
+.dropdown:hover .dropdown__menu {
+    left: 0;
+    opacity: 1;
+}
