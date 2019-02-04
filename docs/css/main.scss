@@ -385,11 +385,25 @@
         border: 2px solid $yellow;
         box-shadow: inset 0 0 14px 2px $yellow;
     }
+    &--comment {
+        resize: none;
+        height: rem(110px);
+    }
 }
 
-.form__block-input--comment {
-    resize: none;
-    height: rem(110px);
+.form__controls {
+    display: flex;
+
+    &-btn {
+        display: flex;
+    }
+}
+
+.form__controls-fake-radio {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #fff;
 }
 
 @media (max-width: 992px) {

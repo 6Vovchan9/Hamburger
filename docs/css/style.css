@@ -1162,10 +1162,24 @@ table {
     border: 2px solid #f9b43b;
     -webkit-box-shadow: inset 0 0 14px 2px #f9b43b;
     box-shadow: inset 0 0 14px 2px #f9b43b; }
+  .form__block-input--comment {
+    resize: none;
+    height: 6.875rem; }
 
-.form__block-input--comment {
-  resize: none;
-  height: 6.875rem; }
+.form__controls {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+  .form__controls-btn {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex; }
+
+.form__controls-fake-radio {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #fff; }
 
 @media (max-width: 768px) {
   .dropdown {
