@@ -387,6 +387,11 @@
     }
 }
 
+.form__block-input--comment {
+    resize: none;
+    height: rem(110px);
+}
+
 @media (max-width: 992px) {
     // .page__container {
     //     max-width: 700px;

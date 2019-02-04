@@ -576,17 +576,24 @@ table {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-  position: relative;
   margin-bottom: 1.875rem; }
 
-.team-acco__item:before {
+.team-acco__trigger {
+  position: relative;
+  margin-bottom: 1.25rem;
+  color: inherit;
+  font-family: Gagalin;
+  font-weight: 400;
+  text-decoration: none; }
+
+.team-acco__trigger:before {
   content: "";
   position: absolute;
   background: center center no-repeat;
   width: 9px;
   height: 9px;
   top: 4px;
-  left: -5%;
+  left: -8%;
   display: block;
   background-image: url("../img/team/Polygon_1.png"); }
 
@@ -596,15 +603,8 @@ table {
 .team-acco__item--active .team-acco__content {
   height: auto; }
 
-.team-acco__item--active:before {
+.team-acco__item--active .team-acco__trigger:before {
   background-image: url("../img/team/Polygon_2.png"); }
-
-.team-acco__trigger {
-  margin-bottom: 1.25rem;
-  color: inherit;
-  font-family: Gagalin;
-  font-weight: 400;
-  text-decoration: none; }
 
 .team-acco__content {
   display: -webkit-box;
@@ -658,9 +658,7 @@ table {
   .team-acco__text {
     text-align: center; }
   .team-acco__title {
-    margin-top: 0.625rem; }
-  .team-acco__item:before {
-    left: 15%; } }
+    margin-top: 0.625rem; } }
 
 .menu {
   position: relative; }
@@ -1164,6 +1162,10 @@ table {
     border: 2px solid #f9b43b;
     -webkit-box-shadow: inset 0 0 14px 2px #f9b43b;
     box-shadow: inset 0 0 14px 2px #f9b43b; }
+
+.form__block-input--comment {
+  resize: none;
+  height: 6.875rem; }
 
 @media (max-width: 768px) {
   .dropdown {
