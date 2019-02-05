@@ -16,3 +16,12 @@
 .footer__col--align-right {
     justify-content: flex-end;
 }
+
+@media (max-width: $phones) {
+    .footer__container {
+        flex-direction: column;
+    }
+    .footer__col {
+        justify-content: center;
+    }
+}

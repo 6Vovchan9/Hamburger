@@ -8,6 +8,7 @@
 
 .contacts__address {
     font-weight: 300;
+    white-space: nowrap;
 }
 
 .contacts__phone {
@@ -24,4 +25,10 @@
     color: $orange;
     font-weight: 500;
     text-decoration: none;
+}
+
+@media (max-width: $phones) {
+    .contacts {
+        align-items: center;
+    }
 }

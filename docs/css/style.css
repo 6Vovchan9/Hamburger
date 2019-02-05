@@ -675,7 +675,10 @@ table {
   right: 0;
   display: -webkit-box;
   display: -ms-flexbox;
-  display: flex; }
+  display: flex;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end; }
 
 .menu__acco {
   display: -webkit-box;
@@ -740,6 +743,10 @@ table {
   max-height: 100%;
   overflow: hidden; }
 
+@media (max-width: 768px) {
+  .menu-acco__item--active .menu-acco__content {
+    max-width: 100%; } }
+
 .hero {
   background-image: url("../img/hero/section_1.png");
   background-size: cover; }
@@ -775,6 +782,9 @@ table {
   height: 75px;
   display: block; }
 
+.nav {
+  margin-right: 0.9375rem; }
+
 .nav__list {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -806,8 +816,7 @@ table {
   text-transform: uppercase; }
 
 .hero__btn-order {
-  background-color: #e45028;
-  margin-left: 15px; }
+  background-color: #e45028; }
 
 .page {
   display: -webkit-box;
@@ -988,8 +997,8 @@ table {
 
 .best__item {
   -webkit-box-flex: 1;
-  -ms-flex: 1 0 180px;
-  flex: 1 0 180px;
+  -ms-flex: 1;
+  flex: 1;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1084,6 +1093,9 @@ table {
 .reviews__text {
   font-family: Ubuntu;
   font-weight: 300;
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
   max-height: 62%;
   overflow: hidden;
   line-height: 24px; }
@@ -1239,13 +1251,25 @@ table {
 .form__checkbox-real:checked ~ .form__checkbox-fake:before {
   display: initial; }
 
+.form__reset {
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-family: Ubuntu;
+  font-weight: 300;
+  font-size: 0.875rem;
+  cursor: pointer;
+  padding: 0 0.9375rem;
+  border-radius: 5px;
+  text-transform: uppercase; }
+
 @media (max-width: 768px) {
   .dropdown {
     display: block; }
   .nav {
     display: none; }
   .hero__content-img {
-    height: 60%; }
+    height: 55%; }
   .hero__content-desc {
     text-align: center; }
   .hero__burger-pic {
@@ -1257,12 +1281,57 @@ table {
     flex-direction: column; }
   .reviews__item {
     width: calc(100%/2); }
+  .reviews__item-hover {
+    text-align: center;
+    padding: 20px; }
+  .order__container {
+    max-width: 500px; }
+  .form {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column; }
+  .form__col {
+    margin: 0; }
+  .form__row:last-child {
+    margin-bottom: 20px; }
   .pagination {
     display: none; } }
 
 @media (max-width: 480px) {
   html {
-    font-size: 14px; } }
+    font-size: 14px; }
+  .best__list {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column; }
+  .best__item {
+    text-align: initial;
+    margin: 0;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row; }
+  .best__desc {
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1; }
+  .best__img {
+    margin: 0; }
+  .reviews__item-hover {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center; }
+  .reviews__text {
+    max-height: 0; }
+  .reviews__title {
+    font-size: 1.5rem;
+    margin-bottom: 1.25rem; }
+  .form__row {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center; } }
 
 .footer {
   background-color: black; }
@@ -1287,6 +1356,17 @@ table {
   -ms-flex-pack: end;
   justify-content: flex-end; }
 
+@media (max-width: 480px) {
+  .footer__container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column; }
+  .footer__col {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center; } }
+
 .contacts {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1300,7 +1380,8 @@ table {
   font-style: normal; }
 
 .contacts__address {
-  font-weight: 300; }
+  font-weight: 300;
+  white-space: nowrap; }
 
 .contacts__phone {
   display: -webkit-box;
@@ -1318,6 +1399,12 @@ table {
   color: #e45028;
   font-weight: 500;
   text-decoration: none; }
+
+@media (max-width: 480px) {
+  .contacts {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center; } }
 
 .social-networks__icon {
   display: -webkit-box;

@@ -22,7 +22,7 @@
                             </a>
                         </div>
                         <div class="header__col header__col--align-right">
-                            <nav class="mav">
+                            <nav class="nav">
                                 <ul class="nav__list">
                                     <li class="nav__item nav__item--active">
                                         <a href="#" class="nav__link">О&nbsp;нас</a>
@@ -196,7 +196,7 @@
                 <div class="section-title section-title--menu">Меню</div>
                 <div class="menu__content">
                     <ul class="menu__acco">
-                        <li class="menu-acco__item menu-acco__item--active">
+                        <li class="menu-acco__item">
                             <a class="menu-acco__trigger" href="#" style="background-image: url('./img/menu/IMG_4084.jpg.png')">
                                 <div class="menu-acco__trigger-bg"></div>
                                 <div class="menu-acco__trigger-text">Для мясоедов</div>
@@ -209,14 +209,14 @@
                                 </div>
                             </div>
                         </li>
-                        <li class="menu-acco__item">
+                        <li class="menu-acco__item menu-acco__item--active">
                             <a class="menu-acco__trigger" href="#" style="background-image: url('./img/menu/photo-1466814314367-45323ac74e2b.jpg.png')">
                                 <div class="menu-acco__trigger-bg"></div>
                                 <div class="menu-acco__trigger-text">Вегетарианское</div>
                             </a>
                             <div class="menu-acco__content">
                                 <div class="menu-acco__text">
-                                    Aкт.
+                                    Aкт.Речевой акт редуцирует диалектический характер. Развивая эту тему, заимствование редуцирует конструктивный механизм сочленений. Лирический субъект начинает диссонансный анжамбеман. Наш современник стал особенно чутко относиться к слову, однако механизм сочленений неустойчив. Модальность высказывания, как справедливо считает И.Гальперин, пространственно выбирает метр.
                                 </div>
                             </div>
                         </li>
@@ -329,9 +329,9 @@
                 </div>
             </section> -->
             <section class="section order">
-                <div class="container page__container">
+                <div class="container page__container order__container">
                     <div class="section-title section-title--order">Закажите доставку</div>
-                    <div class="form">
+                    <form class="form" action="order.php" method="POST">
                         <div class="form__col">
                             <div class="form__row">
                                 <label class="form__block">
@@ -380,12 +380,12 @@
                                     <label class="form__controls-btn">
                                         <input type="radio" name="cash/card" value="cash" checked class="form__controls-real-radio">
                                         <div class="form__controls-fake-radio"></div>
-                                        <div class="form__controls-btn-title">Да</div>
+                                        <div class="form__controls-btn-title">Потребуется сдача</div>
                                     </label>
                                     <label class="form__controls-btn">
                                         <input type="radio" name="cash/card" value="card" class="form__controls-real-radio">
                                         <div class="form__controls-fake-radio"></div>
-                                        <div class="form__controls-btn-title">Нет</div>
+                                        <div class="form__controls-btn-title">Оплата по карте</div>
                                     </label>
                                 </div>
                             </div>
@@ -396,8 +396,14 @@
                                     <div class="form__checkbox-fake"></div>
                                 </label>
                             </div>
+                            <div class="form__row">
+                                <button type="button" name="submit" class="btn hero__btn-order">
+                                    Заказать
+                                </button>
+                                <input type="reset" name="submit" value="Очистить" class="form__reset">
+                            </div>
                         </div>
-                    </div>
+                    </form>
                 </div>
             </section>
             <section class="section map">
