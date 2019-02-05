@@ -276,7 +276,7 @@
 
 .reviews__item {
     width: calc(100%/4);
-    min-width: 200px;
+    // min-width: 200px;
     filter: grayscale(100%);
     // height: 50%;
     background: center center / cover no-repeat;
@@ -507,6 +507,10 @@
     }
     .hero__content-desc {
         text-align: center;
+        padding: 0;
+    }
+    .hero__content-text {
+        padding: 0;
     }
     .hero__burger-pic {
         padding-bottom: 1rem;
@@ -543,7 +547,7 @@
 
 @media (max-width: $phones) {
     html {
-        font-size: 14px;
+        font-size: 12px;
     }
 
     .best__list {

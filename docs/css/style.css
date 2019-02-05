@@ -1052,7 +1052,6 @@ table {
 
 .reviews__item {
   width: calc(100%/4);
-  min-width: 200px;
   -webkit-filter: grayscale(100%);
   filter: grayscale(100%);
   background: center center / cover no-repeat;
@@ -1273,7 +1272,10 @@ table {
   .hero__content-img {
     height: 55%; }
   .hero__content-desc {
-    text-align: center; }
+    text-align: center;
+    padding: 0; }
+  .hero__content-text {
+    padding: 0; }
   .hero__burger-pic {
     padding-bottom: 1rem; }
   .hero__content {
@@ -1302,7 +1304,7 @@ table {
 
 @media (max-width: 480px) {
   html {
-    font-size: 14px; }
+    font-size: 12px; }
   .best__list {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
