@@ -39,6 +39,10 @@
     display: block;
 }
 
+.nav {
+    margin-right: rem(15px);
+}
+
 .nav__list {
     display: flex;
 }
@@ -74,7 +78,7 @@
 
 .hero__btn-order {
     background-color: $orange;
-    margin-left: 15px;
+    // margin-left: 15px;
 }
 
 .page {
@@ -226,7 +230,7 @@
 }
 
 .best__item {
-    flex: 1 0 180px;
+    flex: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -316,6 +320,7 @@
 .reviews__text {
     font-family: Ubuntu;
     font-weight: 300;
+    flex: 1;
     max-height: 62%;
     overflow: hidden;
     // margin-top: 30px;
@@ -465,6 +470,19 @@
     display: initial;
 }
 
+.form__reset {
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-family: Ubuntu;
+    font-weight: 300;
+    font-size: rem(14px);
+    cursor: pointer;
+    padding: 0 rem(15px);
+    border-radius: 5px;
+    text-transform: uppercase;
+}
+
 @media (max-width: 992px) {
     // .page__container {
     //     max-width: 700px;
@@ -479,7 +497,7 @@
         display: none;
     }
     .hero__content-img {
-        height: 60%;
+        height: 55%;
     }
     .hero__content-desc {
         text-align: center;
@@ -496,6 +514,22 @@
     .reviews__item {
         width: calc(100%/2);
     }
+    .reviews__item-hover {
+        text-align: center;
+        padding: 20px;
+    }
+    .order__container {
+        max-width: 500px;
+    }
+    .form {
+        flex-direction: column;
+    }
+    .form__col {
+        margin: 0;
+    }
+    .form__row:last-child {
+        margin-bottom: 20px;
+    }
     .pagination {
         display: none;
     }
@@ -504,6 +538,36 @@
 @media (max-width: $phones) {
     html {
         font-size: 14px;
+    }
+
+    .best__list {
+        flex-direction: column;
+    }
+
+    .best__item {
+        text-align: initial;
+        margin: 0;
+        flex-direction: row;
+    }
+    .best__desc {
+        flex: 1;
+    }
+
+    .best__img {
+        margin: 0;
+    }
+    .reviews__item-hover {
+        justify-content: center;
+    }
+    .reviews__text {
+        max-height: 0;
+    }
+    .reviews__title {
+        font-size: rem(24px);
+        margin-bottom: rem(20px)
+    }
+    .form__row {
+        justify-content: center;
     }
     // .page__container {
     //     max-width: 450px;
