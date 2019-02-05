@@ -1263,11 +1263,13 @@ table {
   border-radius: 5px;
   text-transform: uppercase; }
 
-@media (max-width: 768px) {
+@media (max-width: 950px) {
   .dropdown {
     display: block; }
   .nav {
-    display: none; }
+    display: none; } }
+
+@media (max-width: 768px) {
   .hero__content-img {
     height: 55%; }
   .hero__content-desc {
