@@ -1,57 +1,75 @@
-.social-networks__icon {
+.social-networks__img {
     display: flex;
 }
 
 .social-networks__list {
     display: flex;
+    align-items: center;
 }
 
 .social-networks__item {
     margin-right: 10px;
+
 }
 
 .social-networks__link {
     font-size: 0;
-    padding: 11.5px;
+    padding: 7px;
     // background-color: red;
     position: relative;
-    display: block;
+    display: flex;
 }
 
-.social-networks__link:before {
-    content: "";
-    // background: green;
-    // width: 20px;
-    // height: 20px;
-    display: block;
-    position: absolute;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    left: 50%;
-    z-index: 10;
-    // background: center center no-repeat;
-}
-
-.social-networks__link--vk:before {
-    background-image: url("../img/vk.png");
+.social-networks__icon-vk {
     width: 23px;
-    height: 13px;
+    height: 23px;
 }
 
-.social-networks__link--fb:before {
-    background-image: url("../img/fb_hover.png");
+.social-networks__icon-fb {
     width: 20px;
     height: 20px;
 }
 
-.social-networks__link--inst:before {
-    background-image: url("../img/inst.png");
+.social-networks__icon-inst {
     width: 20px;
     height: 20px;
 }
 
-.social-networks__link--twitter:before {
-    background-image: url("../img/twitter.png");
+.social-networks__icon-twitter {
     width: 20px;
     height: 16px;
 }
+
+// .social-networks__link:before {
+//     content: "";
+//     display: block;
+//     position: absolute;
+//     top: 50%;
+//     transform: translate(-50%, -50%);
+//     left: 50%;
+//     z-index: 10;
+// }
+
+// .social-networks__link--vk:before {
+//     background-image: url("../img/vk.png");
+//     width: 23px;
+//     height: 13px;
+// }
+
+// .social-networks__link--fb:before {
+//     background-image: url("../img/fb_hover.png");
+//     width: 20px;
+//     height: 20px;
+// }
+
+// .social-networks__link--inst:before {
+//     background-image: url("../img/inst.png");
+//     width: 20px;
+//     height: 20px;
+// }
+
+// .social-networks__link--twitter:before {
+//     background-image: url("../img/twitter.png");
+//     width: 20px;
+//     height: 16px;
+// }

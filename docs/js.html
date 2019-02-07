@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hello</title>
+</head>
+<body>
+<!-- Оператор if -->
+    <script>
+        var name='Вован';
+        console.log(name+' меня зовут');
+        name='Костян';
+        console.log('А моего кореша '+name);
+        if (name=='Костян') {
+            console.log('Да, ты прав - Константин')
+        }
+        if (name=='Андрюха') {
+            console.log('Да, ты прав - Андрюха')
+        }
+        if (name=='Васек') {
+            console.log('А может быть и Васек')
+        }
+        else {
+            console.log('Не путай! Именно Костян! И больше никак!')
+        }
+    </script>
+<!-- Оператор for -->
+    <script>
+        for (var k=1; k<11; k++) {
+            console.log (k);
+        }
+    </script>
+<!-- Функции -->
+    <script>
+        function sum (p1, p2, p3) {
+            var result=p1+p2+p3;
+            return result;
+        }
+        var sum1=sum(3,4,2);
+        var sum2=sum(1,9,6);
+        console.log(sum1);
+        console.log(sum2);
+    </script>
+    <script>
+        function sum (p1, p2, p3) {
+            return p1+p2+p3;
+        }
+        console.log(sum(1,2,3));
+    </script>
+<!-- Массивы и объекты -->
+<!-- Задание 1 -->
+    <script>
+        var array=['Привет','LoftSchool'];
+        array.push('я изучаю');
+        array.push('javascript');
+        console.log(array.length);
+        length=array.length;
+        console.log(length);
+        for (var i=0; i<array.length; i++) {
+            console.log(array[i]);
+        }
+    </script>
+<!-- Задание 2 -->
+    <script>
+        var mas=[11,24,102,56,241,4,237,72,730,89];
+        for (var i=0; i<mas.length; i++) {
+            if (mas[i]>100) {
+                console.log(mas[i]);
+            } 
+        }
+    </script>
+<!-- Задание 3 -->
+    <script>
+        var obj={name:'Игарь', lastName:'Тищенко', age:'25'};
+        obj.name='Вовчан';
+        console.log(obj.name);
+        console.log(obj['lastName']);
+        console.log(obj.age);
+        obj.work='Programmer';
+        console.log(obj.work)
+        console.log(obj);
+    </script>
+<!-- Задание 4 -->
+    <script>
+        var obj={name:'Вован', lastName:'Тищенко', age:'25'};
+        function hello (human) {
+            var aboutMe='Привет меня зовут '+obj.name+' '+obj['lastName']+' и мне '+obj.age+' лет';
+            return aboutMe;
+        }
+        var VeryGoodMan=hello(obj);
+        console.log(VeryGoodMan);
+    </script>
+</body>
+</html>
