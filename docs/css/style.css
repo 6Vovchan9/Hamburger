@@ -1273,6 +1273,7 @@ table {
   font-family: Ubuntu;
   font-weight: 300;
   font-size: 0.875rem;
+  margin-left: 0.625rem;
   cursor: pointer;
   padding: 0 0.9375rem;
   border-radius: 5px;
