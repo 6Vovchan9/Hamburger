@@ -1,0 +1,55 @@
+.price__container {
+    max-width: 1155px;
+    align-items: center;
+}
+
+.price__slider {
+    flex: 1;
+    background-color: blue;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.price__arrow {
+    padding: 30px 5px;
+    background-color: green;
+}
+
+.price__items {
+    display: flex;
+    position: relative;
+    right: 0px;
+    transition: right 1s;
+}
+
+.price__item {
+    display: flex;
+    width: 1051px;
+}
+
+.price__burger-img {
+    flex: 1;
+}
+
+.price__burger-pic {
+    max-width: 100%;
+}
+
+.price__burger-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+}
+
+.price__details {
+    display: flex;
+    align-items: flex-end;
+}
+
+.price__burger-cost {
+    display: flex;
+    align-items: flex-end;
+}

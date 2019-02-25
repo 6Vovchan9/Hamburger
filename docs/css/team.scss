@@ -32,6 +32,7 @@
     color: inherit;
     font-family: Gagalin;
     font-weight: 400;
+    cursor: pointer;
     text-decoration: none;
 }
 
@@ -65,6 +66,7 @@
     display: flex;
     height: 0;
     overflow: hidden;
+    transition: height 0.5s;
 }
 
 .team-acco__pic {
