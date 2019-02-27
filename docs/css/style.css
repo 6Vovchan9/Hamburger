@@ -582,8 +582,7 @@ table {
 .price__item {
   display: -webkit-box;
   display: -ms-flexbox;
-  display: flex;
-  width: 1051px; }
+  display: flex; }
 
 .price__burger-img {
   -webkit-box-flex: 1;
@@ -1600,3 +1599,51 @@ table {
 .social-networks__icon-twitter {
   width: 20px;
   height: 16px; }
+
+.popup {
+  position: fixed;
+  left: -9999px;
+  top: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  opacity: 0; }
+
+.opened {
+  width: 100%;
+  height: 100%;
+  left: 0;
+  opacity: 1;
+  -webkit-transition: opacity 1s;
+  -o-transition: opacity 1s;
+  transition: opacity 1s;
+  z-index: 100; }
+
+.overlay {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  background-color: #2f3234;
+  opacity: 0.99;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center; }
+
+.popup__close {
+  position: absolute;
+  right: 34px;
+  top: 31px;
+  width: 30px;
+  height: 30px;
+  background-color: #fff; }
+
+.popup__logo {
+  position: absolute;
+  top: 12px;
+  left: 24px; }

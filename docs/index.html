@@ -50,7 +50,7 @@
                             <button type="button" name="submit" class="btn btn--orange">
                                 Заказать
                             </button>
-                            <div class="dropdown">
+                            <div class="dropdown" id="hamburgerBtn">
                                 <div class="dropdown__hamburger"></div>
                                 
                                 <div class="dropdown__menu">
@@ -144,7 +144,7 @@
                             <use xlink:href="./sprite.svg#arrow"></use>
                         </svg>
                     </a>
-                    <div class="price__slider">
+                    <div class="price__slider" id="slider">
                         <div class="price__items" id="price__items">
                             <div class="price__item">
                                 <div class="price__burger-img">
@@ -632,15 +632,42 @@
                     </li>
                 </ul>
             </div>
+            <!-- <div class="popup" id="popup">
+                <div class="overlay">   
+                    <a href="#" class="popup__close"></a>
+                    <div class="popup__logo">
+                        <a href="./index.html" class="logo">
+                            <svg viewBox="0 0 98.265 74.317" class="logo__image">
+                                <use xlink:href="./sprite.svg#logo"></use>
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="popup__content">
+                        <h1>sdasd</h1>
+                    </div>
+                </div>
+            </div> -->
         </div>
     </div>
     <script>
         
         const buttons = document.querySelectorAll('.team-acco__item');
+        
+        // window.addEventListener ('resize', function (params) {
+        //     console.log (document.documentElement.clientWidth);
+        // })
+
+        window.addEventListener ('resize', function (params) {
+            console.log (document.documentElement.clientWidth);
+        })
+        
 
         for (const button of buttons) {
-            
+
+
             button.addEventListener('click', function (event) { //аргумент функции может называться как угодно хоть "event" хоть "hello"
+                
+                console.log (event.currentTarget);
                 const curbutton = event.currentTarget;
                 //currentTarget необходим для того чтобы обратиться именно к тому item на который кликнули
                 const content = curbutton.querySelector('.team-acco__content'); //Пишем так а не document.querySelector потому что .team-acco__content ищем именно в том item на который нажали а не во всем document!
@@ -687,26 +714,31 @@
     <script>
         const leftBtn = document.querySelector ("#arrow-left");
         const rightBtn = document.querySelector ("#arrow-right");
-        const item = document.querySelector ("#price__items");
-        
+        const items = document.querySelector ("#price__items");
+        const item = document.querySelectorAll (".price__item");
+        const slider = document.querySelector ("#slider");
 
-        const step = item.firstElementChild.getBoundingClientRect().width;
-        const maxRight = (item.children.length - 1)*step;
+        const sliderWidth = slider.getBoundingClientRect().width;
+
+        Array.from(item).forEach(function (elem) {
+            elem.style.width = `${sliderWidth}px`;
+        });
+
+        const step = items.firstElementChild.getBoundingClientRect().width;
+        const maxRight = (items.children.length - 1)*step;
         const minLeft = 0;
         let currentRight = 0;
-
-        console.log('Hello!');
-
+        
         rightBtn.addEventListener ('click', function (event) {
             event.preventDefault();
             
             if (currentRight < maxRight) {
                 currentRight = currentRight + step;
-                item.style.right = `${currentRight}px`;
+                items.style.right = `${currentRight}px`;
             }
             else {
                 currentRight = 0;
-                item.style.right = 0;
+                items.style.right = 0;
             };
         }); 
         leftBtn.addEventListener ('click', function (event) {
@@ -714,13 +746,100 @@
 
             if (currentRight > minLeft) {
                 currentRight -= step;
-                item.style.right = `${currentRight}px`;
+                items.style.right = `${currentRight}px`;
             }
             else {
                 currentRight = maxRight;
-                item.style.right = maxRight;
+                items.style.right = `${maxRight}px`;
             };
         });     
     </script>
+
+
+    <!-- Сейчас будем реализовывать всплывашку (модалку):
+    1)способ (при помощи навешивания класса opened т.е по началу эта модалка имеет left: -9999px;
+    а класс opened делает left:0): -->
+
+
+    <!-- <script>
+        const hamburgerBtn = document.querySelector ('#hamburgerBtn');
+        const popup = document.querySelector ('#popup');
+        const close = document.querySelector ('.popup__close');
+
+        hamburgerBtn.addEventListener ('click', function () {
+            popup.classList.add ('opened');
+        });
+
+        close.addEventListener ('click', function () {
+            popup.classList.remove ('opened');
+        });
+    </script> -->
+
+
+    <!-- 
+    2)способ:
+    Так как на странице будет много модалок безумные программеры решили добавлять верстку под эти модалки таким образом:
+    Создается скрипт с шаблоном этой верстки: -->
+    <script type="template" id="modal-template">
+        <div class="overlay">   
+            <a href="#" class="popup__close"></a>
+            <div class="popup__logo">
+                <a href="./index.html" class="logo">
+                    <svg viewBox="0 0 98.265 74.317" class="logo__image">
+                        <use xlink:href="./sprite.svg#logo"></use>
+                    </svg>
+                </a>
+            </div>
+            <div class="popup__content">
+
+            </div>
+        </div>
+    </script>
+
+    <!-- Теперь надо вставить эту верстку в созданный нами container и поместить в body при этом навесим еще класс opened и все это при клике на hamburgerBtn.
+        А при нажатии на popup__close мы только лишь удаляем класс из верстки но не трогаем только что добавленную верстку. Хотя можно было удалять эту верстку при клике на popup__close: -->
+
+    <script>
+        const hamburgerBtn = document.querySelector ('#hamburgerBtn');
+        const template = document.querySelector ('#modal-template').innerHTML;
+
+        hamburgerBtn.addEventListener ('click', function () {
+            const modal = createmodal("Hello world!");
+            document.body.appendChild(modal);
+            const popup = document.querySelector ('.popup');
+            popup.classList.add ('opened');
+
+        });
+
+        
+
+        function createmodal(content) {
+            const container = document.createElement ('div');
+            container.className = 'popup';
+            container.innerHTML = template;
+
+            const contentBlock = container.querySelector ('.popup__content');
+            contentBlock.innerHTML = content;
+            // content это то что мы передаем в функцию при ее вызове modal = createmodal('Hello world!');
+
+            const close = container.querySelector ('.popup__close');
+            close.addEventListener ('click', function () {
+                // document.querySelector ('.popup').classList.remove ('opened');
+                document.body.removeChild(container);
+            });
+
+            // Для того чтобы модалка также закрывалась при нажатии на overlay:
+
+            const overlay = container.querySelector ('.overlay');
+            overlay.addEventListener ('click', function (params) {
+                if (params.target == overlay) {
+                    close.click();
+                }
+            })
+
+            return container;
+        };
+    </script>
+
 </body>
 </html>
