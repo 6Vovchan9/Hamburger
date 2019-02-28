@@ -884,13 +884,22 @@ table {
   display: flex; }
 
 .nav__item {
-  margin-left: 2.1875rem;
-  list-style: disc; }
+  margin-left: 1.25rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center; }
 
-.nav__item:first-child {
-  list-style: none; }
+.item-point {
+  width: 8px;
+  height: 8px;
+  background-color: #fff;
+  border-radius: 50%; }
 
 .nav__link {
+  margin-left: 10px;
   padding: 10px 0;
   font-family: Ubuntu;
   font-size: 0.8125rem;
@@ -1411,7 +1420,7 @@ table {
 @media (max-width: 950px) {
   .dropdown {
     display: block; }
-  .nav {
+  .header .nav {
     display: none; } }
 
 @media (max-width: 768px) {
@@ -1488,7 +1497,8 @@ table {
   background-color: black;
   left: 0;
   bottom: 0;
-  right: 0; }
+  right: 0;
+  z-index: 10; }
 
 .footer__container {
   max-width: 970px; }
@@ -1608,6 +1618,36 @@ table {
   display: -ms-flexbox;
   display: flex;
   opacity: 0; }
+  .popup .nav {
+    margin: 0; }
+    .popup .nav .nav__list {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column; }
+    .popup .nav .nav__item {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      margin: 0; }
+    .popup .nav .nav__link {
+      margin: 0; }
+
+.popup--reviews .popup__content {
+  position: relative;
+  color: #2f3234;
+  background-color: #fff;
+  max-width: 460px;
+  padding: 30px 20px;
+  border-radius: 10px; }
+
+.popup--reviews .reviews__title {
+  max-width: 80%;
+  margin-bottom: 30px; }
+
+.popup--reviews .popup__close {
+  background-color: red; }
 
 .opened {
   width: 100%;

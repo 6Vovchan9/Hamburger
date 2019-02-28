@@ -4,6 +4,38 @@
     top: 0;
     display: flex;
     opacity: 0;
+
+    .nav {
+        margin: 0;
+        .nav__list {
+            flex-direction: column;
+        }
+        .nav__item {
+            flex-direction: column;
+            margin: 0;
+        }
+        .nav__link {
+            margin: 0;
+        }
+    }
+}
+
+.popup--reviews {
+    .popup__content {
+        position: relative;
+        color: $black;
+        background-color: #fff;
+        max-width: 460px;
+        padding: 30px 20px;
+        border-radius: 10px;
+    }
+    .reviews__title {
+        max-width: 80%;
+        margin-bottom: 30px;
+    }
+    .popup__close {
+        background-color: red;
+    }
 }
 
 .opened {

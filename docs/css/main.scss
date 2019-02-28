@@ -53,15 +53,28 @@
 }
 
 .nav__item {
-    margin-left: rem(35px);
-    list-style: disc;
+    margin-left: rem(20px);
+    // list-style: disc;
+    display: flex;
+    align-items: center;
 }
 
-.nav__item:first-child {
-    list-style: none;
+// .nav__item:first-child {
+//     .nav__link {
+//         margin-left: 0;
+//     }
+//     margin-left: 0;
+// }
+
+.item-point {
+    width: 8px;
+    height: 8px;
+    background-color: #fff;
+    border-radius: 50%;
 }
 
 .nav__link {
+    margin-left: 10px;
     padding: 10px 0;
     font-family: Ubuntu;
     font-size: 0.8125rem;
@@ -544,9 +557,12 @@
     .dropdown {
         display: block;
     }
-    .nav {
-        display: none;
+    .header {
+        .nav {
+            display: none;
+        }
     }
+    
 }
 
 @media (max-width: $tablets) {
