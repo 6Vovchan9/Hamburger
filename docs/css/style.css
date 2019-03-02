@@ -555,7 +555,6 @@ table {
   -webkit-box-flex: 1;
   -ms-flex: 1;
   flex: 1;
-  background-color: blue;
   height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -566,8 +565,7 @@ table {
   overflow: hidden; }
 
 .price__arrow {
-  padding: 30px 5px;
-  background-color: green; }
+  padding: 30px 5px; }
 
 .price__items {
   display: -webkit-box;
@@ -694,6 +692,10 @@ table {
   display: flex;
   height: 0;
   overflow: hidden;
+  max-height: 35vh;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
   -webkit-transition: height 0.5s;
   -o-transition: height 0.5s;
   transition: height 0.5s; }
@@ -716,9 +718,7 @@ table {
 
 .team-acco__text-content {
   margin-top: 0.9375rem;
-  line-height: 1.5rem;
-  max-height: 35vh;
-  overflow: hidden; }
+  line-height: 1.5rem; }
 
 @media (max-width: 768px) {
   .team-acco__trigger {
@@ -1640,11 +1640,15 @@ table {
   background-color: #fff;
   max-width: 460px;
   padding: 30px 20px;
-  border-radius: 10px; }
+  border-radius: 10px;
+  max-height: 90vh; }
 
 .popup--reviews .reviews__title {
   max-width: 80%;
   margin-bottom: 30px; }
+
+.popup--reviews .reviews__text {
+  max-height: 100%; }
 
 .popup--reviews .popup__close {
   background-color: red; }

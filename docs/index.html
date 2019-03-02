@@ -92,7 +92,7 @@
                     </div>
                 </div>
             </section>
-            <section class="section best"><!-- В этой и следующей секции (reviews) я исключил обертку page далее в след секциях исключу ""...__content" --> 
+            <section class="section best" id="best"><!-- В этой и следующей секции (reviews) я исключил обертку page далее в след секциях исключу ""...__content" --> 
                 <div class="container page__container best__container">
                     <div class="best__content">
                         <h1 class="section-title section-title--best">Мы лучшие</h1>
@@ -143,7 +143,7 @@
                     </div>
                 </div>
             </section>
-            <section class="section price">
+            <section class="section price" id="price">
                 <div class="container page__container price__container">
                     <a href="#" class="price__arrow" id="arrow-left">
                         <svg viewBox="0 0 28.685 14.479" class="arrow arrow--left">
@@ -253,7 +253,7 @@
                     </a>
                 </div>
             </section>
-            <section class="section team">
+            <section class="section team" id="team">
                 <div class="team__content">
                     <div class="section-title section-title--yellow">Команда</div>
                     <ul class="team__acco">
@@ -316,7 +316,7 @@
                     </ul>
                 </div>
             </section>
-            <section class="section menu">
+            <section class="section menu" id="menu">
                 <div class="section-title section-title--menu">Меню</div>
                 <div class="menu__content">
                     <ul class="menu__acco">
@@ -376,7 +376,7 @@
                             <div class="reviews__item-hover">
                                 <div class="reviews__title">Клавдия Шифер</div>
                                 <div class="reviews__text">
-                                    <p>Мысли все о них и о них, о них и о них. Нельзя устоять, невозможно забыть...Мысли все о них и о них, о них и о них. Мысли все о них и о них, о них и о них. Мысли все о них и о них, о них и о них. Нельзя устоять, невозможно забыть... Мысли все о них и о них, о них и о них. Нельзя устоять, невозможно забыть... Никогда не думал что булочки могут быть такими мягкими, котлетка такой сочной, а сыр таким расплавленным.</p>
+                                    <p>Мысли все о них и о них, о них и о них. Мысли все о них и о них, о них и о них. Мысли все о них и о них, о них и о них. Мысли все о них и о них, о них и о них. Нельзя устоять, невозможно забыть...Мысли все о них и о них, о них и о них. Мысли все о них и о них, о них и о них. Мысли все о них и о них, о них и о них. Нельзя устоять, невозможно забыть... Мысли все о них и о них, о них и о них. Нельзя устоять, невозможно забыть... Никогда не думал что булочки могут быть такими мягкими, котлетка такой сочной, а сыр таким расплавленным. Мысли все о них и о них, о них и о них.</p>
                                 </div>
                                 <div class="reviews__btn">
                                     <button type="button" name="submit" class="btn reviews__btn-detailed" id="reviewsBtn">Подробнее</button>
@@ -452,7 +452,7 @@
                     </ul>
                 </div>
             </section>
-            <section class="section order">
+            <section class="section order" id="order">
                 <div class="container page__container order__container">
                     <div class="section-title section-title--yellow">Закажите доставку</div>
                     <form class="form" action="order.php" method="POST">
@@ -530,7 +530,7 @@
                     </form>
                 </div>
             </section>
-            <section class="section map">
+            <section class="section map" id="map">
                 <div class="yandex-map" id="myMapId">
 
                     <footer class="footer">
@@ -652,19 +652,19 @@
                         <nav class="nav">
                             <ul class="nav__list">
                                 <li class="nav__item nav__item--active">
-                                    <a href="#" class="nav__link">О&nbsp;нас</a>
+                                    <a href="#best" class="nav__link">О&nbsp;нас</a>
                                 </li>
                                 <li class="nav__item">
                                     <div class="item-point"></div>
-                                    <a href="#" class="nav__link">Бургеры</a>
+                                    <a href="#price" class="nav__link">Бургеры</a>
                                 </li>
                                 <li class="nav__item">
                                     <div class="item-point"></div>
-                                    <a href="#" class="nav__link">Команда</a>
+                                    <a href="#team" class="nav__link">Команда</a>
                                 </li>
                                 <li class="nav__item">
                                     <div class="item-point"></div>
-                                    <a href="#" class="nav__link">Меню</a>
+                                    <a href="#menu" class="nav__link">Меню</a>
                                 </li>
                                 <li class="nav__item">
                                     <div class="item-point"></div>
@@ -676,7 +676,7 @@
                                 </li>
                                 <li class="nav__item">
                                     <div class="item-point"></div>
-                                    <a href="#" class="nav__link">Контакты</a>
+                                    <a href="#map" class="nav__link">Контакты</a>
                                 </li>
                             </ul>
                         </nav>
@@ -689,15 +689,6 @@
     <script>
         
         const buttons = document.querySelectorAll('.team-acco__item');
-        
-        // window.addEventListener ('resize', function (params) {
-        //     console.log (document.documentElement.clientWidth);
-        // })
-
-        window.addEventListener ('resize', function (params) {
-            console.log (document.documentElement.clientWidth);
-        })
-        
 
         for (const button of buttons) {
 
@@ -708,7 +699,7 @@
                 const curbutton = event.currentTarget;
                 //currentTarget необходим для того чтобы обратиться именно к тому item на который кликнули
                 const content = curbutton.querySelector('.team-acco__content'); //Пишем так а не document.querySelector потому что .team-acco__content ищем именно в том item на который нажали а не во всем document!
-                const text = curbutton.querySelector('.team-acco__text-content');
+                const text = curbutton.querySelector('.team-acco__text');
                 console.log(text);
                 // const reqHeight = getComputedStyle(text).height; ниже 3 способа получения высоты элемента
                 // const reqHeight = text.clientHeight;
@@ -728,12 +719,24 @@
                     closeItems(buttons);
                     //потом открываем то что хотим
                     curbutton.classList.add ('team-acco__item--active');
-                    if (reqHeight<100) {
-                    content.style.height = "100px";
+                    const windowSize = document.documentElement.clientWidth;
+                    console.log (windowSize);
+                    if (windowSize>768) {
+                        if (reqHeight<100) {
+                            content.style.height = "100px"; //100px это высота фотки
+                        }
+                        else {
+                            content.style.height = `${reqHeight}px`;
+                        }
+                    } else {
+                        content.style.height = `${reqHeight+100}px`;
                     }
-                    else {
-                        content.style.height = `${reqHeight}px`;
-                    }
+                    // if (reqHeight<100) {
+                    // content.style.height = "100px";
+                    // }
+                    // else {
+                    //     content.style.height = `${reqHeight}px`;
+                    // }
                 }
 
                 // console.log (event.currentTarget); вернет тот элемент для которого обработчик и предназначается т.е button (.team-acco__trigger)
@@ -755,8 +758,13 @@
         const items = document.querySelector ("#price__items");
         const item = document.querySelectorAll (".price__item");
         const slider = document.querySelector ("#slider");
-
         const sliderWidth = slider.getBoundingClientRect().width;
+
+        //Функция снизу возвращает ширину экрана именно при сжатии или расширении его
+        // window.addEventListener ('resize', function (params) {
+        //     const windowSize = document.documentElement.clientWidth;
+        //     console.log (windowSize);
+        // });        
 
         Array.from(item).forEach(function (elem) {
             elem.style.width = `${sliderWidth}px`;
@@ -809,7 +817,7 @@
             reviewsBtns.addEventListener  ('click', function (params) {
 
                 // получаем доступ в контейнер в котором хранится весь контент отзыва на который нажали. Затем извлекаем из этого контейнера имя отзыва и его текст:
-                const reviewsItemHover = params.currentTarget.parentElement.parentElement;
+                const reviewsItemHover = params.currentTarget.parentElement.parentNode; // для определения родителя можно использовать  parentElement или parentNode, нет никакой разницы
                 // const reviewsContent = reviewsItemHover.innerHTML;
                 const reviewsItemTitle = reviewsItemHover.firstElementChild;
                 const reviewsItemText = reviewsItemHover.querySelector ('.reviews__text');
@@ -821,25 +829,33 @@
                 container.innerHTML = template;
                 wrapperContent.appendChild (container);
 
-                // закидываем в выше созданный div а именно в popup__content контент того отзыва на который нажали
+                // Клонируем тот отзыв и его заголовок на который нажали в новые переменные и закидываем в выше созданный div а именно в popup__content иначе если бы 
+                // мы appendChild те элементы которые взяли со страницы то они бы удалились со страницы а так мы их только копируем
                 const containerContent = container.querySelector ('.popup__content');
-                
+                const reviewsItemTitleClone = reviewsItemTitle.cloneNode(true);
+                const reviewsItemTextClone = reviewsItemText.cloneNode(true);
+
                 // containerContent.innerHTML = reviewsContent;
-                containerContent.appendChild (reviewsItemTitle);
-                containerContent.appendChild (reviewsItemText);
+                containerContent.appendChild (reviewsItemTitleClone);
+                containerContent.appendChild (reviewsItemTextClone);
 
                 // навешиваем на все тот же div классы "opened" и "popup--reviews"
                 container.classList.add ('popup--reviews');
                 container.classList.add ('opened');
 
+                // запрещаем скролл
+                document.body.style.overflow = 'hidden';
+
                 // навешиваем обработчик на кнопку close и при закрытии возвращаем контент отзыва обратно на страницу
                 const closeBtn = container.querySelector ('.popup__close');
                 closeBtn.addEventListener ('click', function () {
                     wrapperContent.removeChild (container);
+                    document.body.style.overflow = '';
+
+                    //Ниже мы пытались вернуть контент на страницу при закрытии модалки потому что сначала мы делали appendChild а не клонировали
                     // reviewsItemHover.appendChild (reviewsItemTitle); appendChild добавляет в конец
-                    // reviewsItemHover.appendChild (reviewsItemText); 
-                    reviewsItemHover.insertBefore (reviewsItemTitle, reviewsItemHover.firstChild); //insertBefore добавляет элемент в начало 
-                    reviewsItemHover.insertBefore (reviewsItemText, reviewsItemTitle.nextSibling); // добавляет после конкретного элемента
+                    // reviewsItemHover.insertBefore (reviewsItemTitle, reviewsItemHover.firstChild); //insertBefore добавляет элемент в начало 
+                    // reviewsItemHover.insertBefore (reviewsItemText, reviewsItemTitle.nextSibling); // добавляет после конкретного элемента
                     
                 })
 
@@ -868,10 +884,10 @@
             hamburgerBtn.style.opacity = 0;
         });
 
-        close.addEventListener ('click', function () {
+        popup.addEventListener ('click', function () {
             popup.classList.remove ('opened');
             document.body.style.overflow = '';
-            hamburgerBtn.style.opacity = 1;
+            hamburgerBtn.style.opacity = 1; 
         });
     </script>
     <!-- 
@@ -949,7 +965,7 @@
             });
 
             let myPlacemark1 = new ymaps.Placemark ([59.896, 30.295], {}, {
-                iconImageHref: `./svg/icons/map-marker.svg`,
+                iconImageHref: `svg/icons/map-marker.svg`,
                 iconImageSize: [195, 60]
             });
             myMap.geoObjects.add(myPlacemark1);  
