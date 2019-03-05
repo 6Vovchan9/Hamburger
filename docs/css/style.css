@@ -434,7 +434,8 @@ table {
   font-family: Gagalin;
   font-weight: 400;
   text-transform: uppercase;
-  line-height: 1em; }
+  line-height: 1em;
+  text-align: center; }
 
 .section-title-small {
   font-size: 30px;
@@ -588,7 +589,8 @@ table {
   flex: 1; }
 
 .price__burger-pic {
-  max-width: 100%; }
+  max-width: 100%;
+  max-height: 100%; }
 
 .price__burger-content {
   -webkit-box-flex: 1;
@@ -618,6 +620,26 @@ table {
   -webkit-box-align: end;
   -ms-flex-align: end;
   align-items: flex-end; }
+
+@media (max-width: 768px) {
+  .price__item {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center; }
+  .price__burger-content {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    text-align: center;
+    margin: 0; }
+  .price__burger-img {
+    -webkit-box-flex: unset;
+    -ms-flex: unset;
+    flex: unset; } }
 
 .team {
   position: relative; }
@@ -1638,13 +1660,12 @@ table {
   position: relative;
   color: #2f3234;
   background-color: #fff;
-  max-width: 460px;
+  max-width: 75vw;
   padding: 30px 20px;
   border-radius: 10px;
   max-height: 90vh; }
 
 .popup--reviews .reviews__title {
-  max-width: 80%;
   margin-bottom: 30px; }
 
 .popup--reviews .reviews__text {
@@ -1681,8 +1702,8 @@ table {
 
 .popup__close {
   position: absolute;
-  right: 34px;
-  top: 31px;
+  right: -15px;
+  top: -15px;
   width: 30px;
   height: 30px;
   background-color: #fff; }

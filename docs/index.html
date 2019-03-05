@@ -460,11 +460,13 @@
                             <div class="form__row">
                                 <label class="form__block">
                                     <div class="form__block-title">Имя</div>
-                                    <input name="client_name" type="text" placeholder="Введите имя" class="form__block-input">
+                                    <input name="name" type="text" placeholder="Введите имя" class="form__block-input" required>
+                                    <div class="error"></div>
                                 </label>
                                 <label class="form__block">
                                     <div class="form__block-title">Телефон</div>
-                                    <input name="client_phone" type="text" class="form__block-input">
+                                    <input name="phone" type="text" placeholder="Введите телефон" class="form__block-input" required>
+                                    <div class="error"></div>
                                 </label>
                             </div>
                             <div class="form__row">
@@ -483,12 +485,12 @@
                                     <input name="client_house-building" type="text" class="form__block-input">
                                 </label>
                                 <label class="form__block">
-                                    <div class="form__block-title">Квартира</div>
-                                    <input name="client_flat" type="text" class="form__block-input">
-                                </label>
-                                <label class="form__block">
                                     <div class="form__block-title">Этаж</div>
                                     <input name="client_floor" type="text" class="form__block-input">
+                                </label>
+                                <label class="form__block">
+                                    <div class="form__block-title">Квартира</div>
+                                    <input name="client_flat" type="text" class="form__block-input">
                                 </label>
                             </div>
                         </div>
@@ -496,7 +498,8 @@
                             <div class="form__row">
                                 <label class="form__block">
                                     <div class="form__block-title">Комментарий</div>
-                                    <textarea name="client_comment" placeholder="Мне понравилось" class="form__block-input form__block-input--comment"></textarea>
+                                    <textarea name="comment" placeholder="Мне понравилось" class="form__block-input form__block-input--comment" required></textarea>
+                                    <div class="error"></div>
                                 </label>
                             </div>
                             <div class="form__row">                            
@@ -521,7 +524,7 @@
                                 </label>
                             </div>
                             <div class="form__row">
-                                <button type="button" name="submit" class="btn btn--orange">
+                                <button id="send" type="button" name="submit" class="btn btn--orange">
                                     Заказать
                                 </button>
                                 <input type="reset" name="submit" value="Очистить" class="form__reset">
@@ -756,6 +759,10 @@
         const leftBtn = document.querySelector ("#arrow-left");
         const rightBtn = document.querySelector ("#arrow-right");
         const items = document.querySelector ("#price__items");
+        //getComputedStyle - глобальная ф-ия кот возвращает объект кот хранит в себе все-все свойства элемента
+        // const computed = getComputedStyle (items);
+        // computed.right возвращает свойство right = '100px' чтобы избавиться от 'px' существует глобальная ф-я которая делает из строки число!
+        // let styleRight = parseInt (computed.right);
         const item = document.querySelectorAll (".price__item");
         const slider = document.querySelector ("#slider");
         const sliderWidth = slider.getBoundingClientRect().width;
@@ -805,6 +812,7 @@
         <div class="overlay">
             <div class="popup__content">
                 <div class="popup__close"></div>
+                <div class="popup__text"></div>
             </div>
         </div>
     </script>
@@ -854,7 +862,7 @@
 
                     //Ниже мы пытались вернуть контент на страницу при закрытии модалки потому что сначала мы делали appendChild а не клонировали
                     // reviewsItemHover.appendChild (reviewsItemTitle); appendChild добавляет в конец
-                    // reviewsItemHover.insertBefore (reviewsItemTitle, reviewsItemHover.firstChild); //insertBefore добавляет элемент в начало 
+                    // reviewsItemHover.insertBefore (reviewsItemTitle, reviewsItemHover.firstChild); //insertBefore добавляет первый элемент в скобках перед вторым элементом в скобках
                     // reviewsItemHover.insertBefore (reviewsItemText, reviewsItemTitle.nextSibling); // добавляет после конкретного элемента
                     
                 })
@@ -867,7 +875,7 @@
         
     </script>
 
-
+    <!-- script для реализации модалки гамбургер несколькими способами -->
     <!-- Сейчас будем реализовывать всплывашку (модалку):
     1)способ (при помощи навешивания класса opened т.е по началу эта модалка имеет left: -9999px;
     а класс opened делает left:0): -->
@@ -965,11 +973,95 @@
             });
 
             let myPlacemark1 = new ymaps.Placemark ([59.896, 30.295], {}, {
-                iconImageHref: `svg/icons/map-marker.svg`,
+                iconImageHref: `./svg/icons/map-marker.svg`,
                 iconImageSize: [195, 60]
             });
             myMap.geoObjects.add(myPlacemark1);  
         });
+    </script>
+
+    <!-- script для реализации заказа через форму -->
+    <script>
+        const myForm = document.querySelector ('.form');
+        const send = document.querySelector ('#send');
+
+        send.addEventListener ('click', function (event) {
+            event.preventDefault ();
+            if (validateForm(myForm)) {
+
+                let formData = new FormData();
+                formData.append ("name", myForm.elements.name.value);
+                formData.append ("phone", myForm.elements.phone.value);
+                formData.append ("comment", myForm.elements.comment.value);
+                formData.append ("to", "695amr@mail.ru");
+
+                let url = "https://webdev-api.loftschool.com/sendmail"
+
+                const xhr = new XMLHttpRequest ();
+                xhr.responseType = 'json';
+                xhr.open ('POST', url);
+                xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
+                xhr.send (formData);
+
+                xhr.addEventListener ('load', function () {
+                    const template = document.querySelector ('#reviews-modal').innerHTML;
+                    const wrapperContent = document.querySelector ('.wrapper__content')
+                    const container = document.createElement ('div');
+                    container.className = 'popup';
+                    container.innerHTML = template;
+                    wrapperContent.appendChild (container);
+                    
+                    // const container  = createElem();
+
+                    container.classList.add ('popup--reviews');
+                    container.classList.add ('opened');
+                    const popupText = container.querySelector ('.popup__text');
+                    popupText.textContent = `${xhr.response.message}`;
+                    document.body.style.overflow = 'hidden';
+
+                    const closeBtn = container.querySelector ('.popup__close');
+                    closeBtn.addEventListener ('click', function () {
+                        wrapperContent.removeChild (container);
+                        document.body.style.overflow = '';
+                    })
+                })
+            }
+        })
+
+        // function createElem () {
+        //     const template = document.querySelector ('#reviews-modal').innerHTML;
+        //     const wrapperContent = document.querySelector ('.wrapper__content')
+        //     const container = document.createElement ('div');
+        //     container.className = 'popup';
+        //     container.innerHTML = template;
+        //     wrapperContent.appendChild (container);
+        //     return container
+        // };
+
+        function validateForm (form) {
+            let valid = true;
+
+            if (!validateField (form.elements.name)) {
+                valid = false;
+            }
+            if (!validateField (form.elements.phone)) {
+                valid = false;
+            }
+            if (!validateField (form.elements.comment)) {
+                valid = false;
+            }
+            return valid;
+        }
+        
+        function validateField (field) {
+            if (!field.checkValidity()) {
+                field.nextElementSibling.textContent = field.validationMessage;
+                return false;
+            } else {
+                field.nextElementSibling.textContent = '';
+                return true;
+            }
+        }
     </script>
 </body>
 </html>

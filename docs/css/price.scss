@@ -33,6 +33,7 @@
 
 .price__burger-pic {
     max-width: 100%;
+    max-height: 100%;
 }
 
 .price__burger-content {
@@ -50,4 +51,20 @@
 .price__burger-cost {
     display: flex;
     align-items: flex-end;
+}
+
+@media (max-width: $tablets) {
+    .price__item {
+        flex-direction: column;
+        align-items: center;
+    }
+    .price__burger-content {
+        align-items: center;
+        text-align: center;
+        margin: 0;
+    }
+
+    .price__burger-img {
+        flex: unset
+    }
 }
