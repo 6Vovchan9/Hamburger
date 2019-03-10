@@ -1,0 +1,116 @@
+.player__container {
+    max-width: 970px;
+    flex-direction: column;
+    align-items: center;
+}
+
+.player__content {
+    position: relative;
+}
+
+.hidden {
+    .player__splash {
+        display: none;
+    }
+}
+
+.player__wrapper {
+    position: relative;
+}
+
+.player__splash {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-image: url(../img/player/Photo.jpg);
+    background-size: cover;
+}
+
+.player__controls {
+    display: flex;
+    align-items: center;
+    // justify-content: space-between;
+    position: absolute;
+    height: 35px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #3e3e3e;
+}
+
+.player__play {
+    padding: 0 20px;
+    cursor: pointer;
+}
+
+
+
+.player__start {
+    border: 16px solid transparent;
+    width: 0;
+    height: 0;
+    padding: 0;
+    border-radius: 1px;
+    border-right-width: 0;
+    border-left-color: #626262;
+    outline: none;
+    display: block;
+}
+
+.paused {
+    .player__start {
+        border: none;
+        background-color: #626262;
+        width: 16px;
+        height: 26px;
+        position: relative;
+
+        &:before {
+            content: "";
+            display: block;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 0;
+            height: 26px;
+            width: 4px;
+            background-color: #3e3e3e;
+    
+        }
+    }
+}
+
+.player__playback {
+    width: 446px;
+    height: 4px;
+    background-color: #626262;
+    position: relative;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.player__playback-button {
+    display: block;
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #626262;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    left: 0;
+}
+
+.player__duration {
+    margin-right: 10px;
+    margin-left: auto;
+    color: #626262;
+}
+
+.player__duration-estimate:before {
+    content: ':';
+    display: inline-block;
+    padding-right: 5px;
+}

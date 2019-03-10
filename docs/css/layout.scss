@@ -50,21 +50,27 @@ table {
 
 .wrapper {
     overflow: hidden;
-    min-height: 100%;
-    display: flex;
-    flex-direction: column;
+    height: 100%;
+    // display: flex;
+    // flex-direction: column;
 }
 
 .wrapper__content {
-    display: flex;
-    flex-direction: column;
+    // display: flex;
+    // flex-direction: column;
+    height: 100%;
+    transition: transform 1s;
+    // когжда анимация происходит с масштабными объектами, где много картинок... лучше прописать will-change и то свойство с которым будем производить действие через js
+    // will-change выносит блок которому мы прописали на отдельный композитный слой
+    will-change: transform;
 }
 
 .section {
     display: flex;
     flex-direction: column;
     min-height: 650px;
-    height: 100vh;
+    height: 100%;
+    // height: 100vh;
     background: center center no-repeat;
 }
 
@@ -92,7 +98,7 @@ table {
     font-weight: 400;
     text-transform: uppercase;
     line-height: 1em;
-    text-align: center;
+    // text-align: center;
 }
 
 .section-title-small {

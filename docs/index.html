@@ -10,7 +10,7 @@
 <body>
     <div class="wrapper">
         <div class="wrapper__content">
-            <section class="section hero">
+            <section class="section hero active">
                 <header class="header">
                     <div class="container header__container">
                         <div class="header__col">
@@ -25,35 +25,35 @@
                             <nav class="nav">
                                 <ul class="nav__list">
                                     <li class="nav__item nav__item--active">
-                                        <a href="#" class="nav__link">О&nbsp;нас</a>
+                                        <a href="#" class="nav__link" data-scroll-to="1">О&nbsp;нас</a>
                                     </li>
                                     <li class="nav__item">
                                         <div class="item-point"></div>
-                                        <a href="#" class="nav__link">Бургеры</a>
+                                        <a href="#" class="nav__link" data-scroll-to="2">Бургеры</a>
                                     </li>
                                     <li class="nav__item">
                                         <div class="item-point"></div>
-                                        <a href="#" class="nav__link">Команда</a>
+                                        <a href="#" class="nav__link" data-scroll-to="3">Команда</a>
                                     </li>
                                     <li class="nav__item">
                                         <div class="item-point"></div>
-                                        <a href="#" class="nav__link">Меню</a>
+                                        <a href="#" class="nav__link" data-scroll-to="4">Меню</a>
                                     </li>
                                     <li class="nav__item">
                                         <div class="item-point"></div>
-                                        <a href="#reviews" class="nav__link">Отзывы</a>
+                                        <a href="#" class="nav__link" data-scroll-to="5">Отзывы</a>
                                     </li>
                                     <li class="nav__item">
                                         <div class="item-point"></div>
-                                        <a href="#" class="nav__link">Как&nbsp;мы&nbsp;работаем</a>
+                                        <a href="#" class="nav__link" data-scroll-to="6">Как&nbsp;мы&nbsp;работаем</a>
                                     </li>
                                     <li class="nav__item">
                                         <div class="item-point"></div>
-                                        <a href="#" class="nav__link">Контакты</a>
+                                        <a href="#" class="nav__link" data-scroll-to="8">Контакты</a>
                                     </li>
                                 </ul>
                             </nav>
-                            <button type="button" name="submit" class="btn btn--orange">
+                            <button type="button" name="submit" class="btn btn--orange" data-scroll-to="7">
                                 Заказать
                             </button>
                             <div class="dropdown" id="hamburgerBtn">
@@ -85,7 +85,7 @@
                             </div>
                         </div>
                         <div class="hero__footer">
-                            <a href="#"  class="next-section">
+                            <a href="#"  class="next-section" data-scroll-to="1">
                                 <div class="next-section__block"></div>
                             </a>
                         </div>
@@ -174,10 +174,83 @@
                                         </button>
                                     </div>
                                 </div>
+                                <div class="price__burger-composition">
+                                    <div class="price__composition-pic">
+                                        <svg viewBox="0 0 45.748 44.625" class="burger-icon">
+                                            <use xlink:href="./sprite.svg#composition"></use>
+                                        </svg>
+                                        <div class="price__composition-title">Состав</div>
+                                    </div>
+                                    <table class="price__composition-table">
+                                        <tbody>
+                                            <tr id="table">
+                                                <td>
+                                                    <svg viewBox="0 0 44 39.212" class="ingredients-icon">
+                                                        <use xlink:href="./sprite.svg#beef"></use>
+                                                    </svg>
+                                                </td>
+                                                <td>Говядина</td>
+                                                <td>300 г</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <svg viewBox="0 0 48 30.317" class="ingredients-icon">
+                                                        <use xlink:href="./sprite.svg#buns"></use>
+                                                    </svg>
+                                                </td>
+                                                <td>Булочки</td>
+                                                <td>100 г</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <svg viewBox="0 0 38 38.638" class="ingredients-icon">
+                                                        <use xlink:href="./sprite.svg#salad"></use>
+                                                    </svg>
+                                                </td>
+                                                <td>Зелень</td>
+                                                <td>70 г</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <svg viewBox="0 0 40.189 43.416" class="ingredients-icon">
+                                                        <use xlink:href="./sprite.svg#sauce"></use>
+                                                    </svg>
+                                                </td>
+                                                <td>Соус</td>
+                                                <td>150 г</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <svg viewBox="0 0 42 37.754" class="ingredients-icon">
+                                                        <use xlink:href="./sprite.svg#cocumber"></use>
+                                                    </svg>
+                                                </td>
+                                                <td>Овощи</td>
+                                                <td>200 г</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <svg viewBox="0 0 38.126 34.138" class="ingredients-icon">
+                                                        <use xlink:href="./sprite.svg#cheese"></use>
+                                                    </svg>
+                                                </td>
+                                                <td>Сыр</td>
+                                                <td>80 г</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="price__burger-calories">
+                                    <svg viewBox="0 0 60 60.178" class="calories-pic">
+                                        <use xlink:href="./sprite.svg#calories"></use>
+                                    </svg>
+                                    <div class="price__calories-value">1200</div>
+                                    <div class="price__calories-title">ккал</div>
+                                </div>
                             </div>
                             <div class="price__item">
                                 <div class="price__burger-img">
-                                    <img src="./img/price/Бургер+с+чернилами+каракатицы.psb.png" alt="" class="price__burger-pic">
+                                    <img src="./img/price/Chiken burger.png" alt="" class="price__burger-pic">
                                 </div>
                                 <div class="price__burger-content">
                                     <div class="section-title section-title--white">dark beef burger 2</div>
@@ -200,7 +273,7 @@
                             </div>
                             <div class="price__item">
                                 <div class="price__burger-img">
-                                    <img src="./img/price/Бургер+с+чернилами+каракатицы.psb.png" alt="" class="price__burger-pic">
+                                    <img src="./img/price/NYC-Diner-Bacon-Cheeseburger.png" alt="" class="price__burger-pic">
                                 </div>
                                 <div class="price__burger-content">
                                     <div class="section-title section-title--white">dark beef burger 3</div>
@@ -220,10 +293,53 @@
                                         </button>
                                     </div>
                                 </div>
+                                <div class="price__burger-composition">
+                                    <div class="price__composition-pic">
+                                        <svg viewBox="0 0 45.748 44.625" class="burger-icon">
+                                            <use xlink:href="./sprite.svg#composition"></use>
+                                        </svg>
+                                        <div class="price__composition-title">Состав</div>
+                                    </div>
+                                    <table class="price__composition-table">
+                                        <tr class="price__table" id="table">
+                                            <td></td>
+                                            <td>Говядина</td>
+                                            <td>300г</td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td>Булочки</td>
+                                            <td>300г</td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td>Зелень</td>
+                                            <td>300г</td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td>Соус</td>
+                                            <td>300г</td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td>Овощи</td>
+                                            <td>300г</td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td>Сыр</td>
+                                            <td>300г</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div class="price__burger-calories">
+                                    
+                                </div>
                             </div>
                             <div class="price__item">
                                 <div class="price__burger-img">
-                                    <img src="./img/price/Бургер+с+чернилами+каракатицы.psb.png" alt="" class="price__burger-pic">
+                                    <img src="./img/price/Spicy_Shrimp_Burger.png" alt="" class="price__burger-pic">
                                 </div>
                                 <div class="price__burger-content">
                                     <div class="section-title section-title--white">dark beef burger 4</div>
@@ -333,7 +449,7 @@
                                 </div>
                             </div>
                         </li>
-                        <li class="menu-acco__item menu-acco__item--active">
+                        <li class="menu-acco__item">
                             <a class="menu-acco__trigger" href="#" style="background-image: url('./img/menu/photo-1466814314367-45323ac74e2b.jpg.jpg')">
                                 <div class="menu-acco__trigger-bg"></div>
                                 <div class="menu-acco__trigger-text">Вегетарианское</div>
@@ -351,7 +467,7 @@
                             </a>
                             <div class="menu-acco__content">
                                 <div class="menu-acco__text">
-                                    Редуцирует.
+                                    Редуцирует. Привет как твои дела что делатешь по выходным какое твое любимое животное а может быть ты хочешь рассказать о своем хобби?
                                 </div>
                             </div>
                         </li>
@@ -452,6 +568,29 @@
                     </ul>
                 </div>
             </section>
+            <section class="section player" id="player">
+                <div class="container page__container player__container">
+                    <div class="section-title">Как мы работаем</div>
+                    <div class="player__content">
+                        <div class="player__wrapper">
+                            <div id="yt-player"></div>
+                            <div class="player__splash"></div>
+                        </div>
+                        <div class="player__controls">
+                            <div class="player__play">
+                                <button class="player__start"></button>
+                            </div>
+                            <div class="player__playback">
+                                <button class="player__playback-button"></button>
+                            </div>
+                            <div class="player__duration">
+                                <span class="player__duration-completed">0:00</span>
+                                <span class="player__duration-estimate">0:00</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
             <section class="section order" id="order">
                 <div class="container page__container order__container">
                     <div class="section-title section-title--yellow">Закажите доставку</div>
@@ -534,7 +673,7 @@
                 </div>
             </section>
             <section class="section map" id="map">
-                <div class="yandex-map" id="myMapId">
+                <div class="myMap" id="myMap">
 
                     <footer class="footer">
                     <div class="container footer__container">
@@ -610,203 +749,97 @@
                     </footer>
                 </div>
             </section>
-            <div class="pagination">
-                <ul class="pagination__list">
-                    <li class="pagination__item">
-                        <a href="#" class="pagination__link pagination__link--active"></a>
-                    </li>
-                    <li class="pagination__item">
-                        <a href="#" class="pagination__link"></a>
-                    </li>
-                    <li class="pagination__item">
-                        <a href="#" class="pagination__link"></a>
-                    </li>
-                    <li class="pagination__item">
-                        <a href="#" class="pagination__link"></a>
-                    </li>
-                    <li class="pagination__item">
-                        <a href="#" class="pagination__link"></a>
-                    </li>
-                    <li class="pagination__item">
-                        <a href="#" class="pagination__link"></a>
-                    </li>
-                    <li class="pagination__item">
-                        <a href="#" class="pagination__link"></a>
-                    </li>
-                    <li class="pagination__item">
-                        <a href="#" class="pagination__link"></a>
-                    </li>
-                    <li class="pagination__item">
-                        <a href="#" class="pagination__link"></a>
-                    </li>
-                </ul>
-            </div>
-            <div class="popup" id="popup">
-                <div class="overlay">   
-                    <a href="#" class="popup__close"></a>
-                    <div class="popup__logo">
-                        <a href="./index.html" class="logo">
-                            <svg viewBox="0 0 98.265 74.317" class="logo__image">
-                                <use xlink:href="./sprite.svg#logo"></use>
-                            </svg>
-                        </a>
-                    </div>
-                    <div class="popup__content">
-                        <nav class="nav">
-                            <ul class="nav__list">
-                                <li class="nav__item nav__item--active">
-                                    <a href="#best" class="nav__link">О&nbsp;нас</a>
-                                </li>
-                                <li class="nav__item">
-                                    <div class="item-point"></div>
-                                    <a href="#price" class="nav__link">Бургеры</a>
-                                </li>
-                                <li class="nav__item">
-                                    <div class="item-point"></div>
-                                    <a href="#team" class="nav__link">Команда</a>
-                                </li>
-                                <li class="nav__item">
-                                    <div class="item-point"></div>
-                                    <a href="#menu" class="nav__link">Меню</a>
-                                </li>
-                                <li class="nav__item">
-                                    <div class="item-point"></div>
-                                    <a href="#reviews" class="nav__link">Отзывы</a>
-                                </li>
-                                <li class="nav__item">
-                                    <div class="item-point"></div>
-                                    <a href="#" class="nav__link">Как&nbsp;мы&nbsp;работаем</a>
-                                </li>
-                                <li class="nav__item">
-                                    <div class="item-point"></div>
-                                    <a href="#map" class="nav__link">Контакты</a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
+        </div>
+        <div class="pagination">
+            <ul class="pagination__list">
+                <li class="pagination__item pagination__item--active">
+                    <a href="#" class="pagination__link" data-scroll-to="0"></a>
+                </li>
+                <li class="pagination__item">
+                    <a href="#" class="pagination__link" data-scroll-to="1"></a>
+                </li>
+                <li class="pagination__item">
+                    <a href="#" class="pagination__link" data-scroll-to="2"></a>
+                </li>
+                <li class="pagination__item">
+                    <a href="#" class="pagination__link" data-scroll-to="3"></a>
+                </li>
+                <li class="pagination__item">
+                    <a href="#" class="pagination__link" data-scroll-to="4"></a>
+                </li>
+                <li class="pagination__item">
+                    <a href="#" class="pagination__link" data-scroll-to="5"></a>
+                </li>
+                <li class="pagination__item">
+                    <a href="#" class="pagination__link" data-scroll-to="6"></a>
+                </li>
+                <li class="pagination__item">
+                    <a href="#" class="pagination__link" data-scroll-to="7"></a>
+                </li>
+                <li class="pagination__item">
+                    <a href="#" class="pagination__link" data-scroll-to="8"></a>
+                </li>
+            </ul>
+        </div>
+        <div class="popup" id="popup">
+            <div class="overlay">   
+                <a href="#" class="popup__close"></a>
+                <div class="popup__logo">
+                    <a href="./index.html" class="logo">
+                        <svg viewBox="0 0 98.265 74.317" class="logo__image">
+                            <use xlink:href="./sprite.svg#logo"></use>
+                        </svg>
+                    </a>
+                </div>
+                <div class="popup__content">
+                    <nav class="nav">
+                        <ul class="nav__list">
+                            <li class="nav__item nav__item--active">
+                                <a href="#best" class="nav__link" data-scroll-to="1">О&nbsp;нас</a>
+                            </li>
+                            <li class="nav__item">
+                                <div class="item-point"></div>
+                                <a href="#price" class="nav__link" data-scroll-to="2">Бургеры</a>
+                            </li>
+                            <li class="nav__item">
+                                <div class="item-point"></div>
+                                <a href="#team" class="nav__link" data-scroll-to="3">Команда</a>
+                            </li>
+                            <li class="nav__item">
+                                <div class="item-point"></div>
+                                <a href="#menu" class="nav__link" data-scroll-to="4">Меню</a>
+                            </li>
+                            <li class="nav__item">
+                                <div class="item-point"></div>
+                                <a href="#reviews" class="nav__link" data-scroll-to="5">Отзывы</a>
+                            </li>
+                            <li class="nav__item">
+                                <div class="item-point"></div>
+                                <a href="#" class="nav__link" data-scroll-to="6">Как&nbsp;мы&nbsp;работаем</a>
+                            </li>
+                            <li class="nav__item">
+                                <div class="item-point"></div>
+                                <a href="#map" class="nav__link" data-scroll-to="8">Контакты</a>
+                            </li>
+                        </ul>
+                    </nav>
                 </div>
             </div>
         </div>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mobile-detect/1.4.3/mobile-detect.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.19/jquery.touchSwipe.min.js"></script>
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script src="./js/player.js"></script>
+    <script src="./js/pagination.js"></script>
+    <script src="./js/ingredients.js"></script>
+    <!-- script для меню (горизонтальный аккордеон) -->
+    <script src="./js/horizontalAcco.js" ></script>
     <!-- script для команды (вертикальный аккордеон) -->
-    <script>
-        
-        const buttons = document.querySelectorAll('.team-acco__item');
-
-        for (const button of buttons) {
-
-
-            button.addEventListener('click', function (event) { //аргумент функции может называться как угодно хоть "event" хоть "hello"
-                
-                console.log (event.currentTarget);
-                const curbutton = event.currentTarget;
-                //currentTarget необходим для того чтобы обратиться именно к тому item на который кликнули
-                const content = curbutton.querySelector('.team-acco__content'); //Пишем так а не document.querySelector потому что .team-acco__content ищем именно в том item на который нажали а не во всем document!
-                const text = curbutton.querySelector('.team-acco__text');
-                console.log(text);
-                // const reqHeight = getComputedStyle(text).height; ниже 3 способа получения высоты элемента
-                // const reqHeight = text.clientHeight;
-                const reqHeight = text.getBoundingClientRect().height;
-                console.log(reqHeight);
-                
-                // curbutton.classList.add ('team-acco__item--active');
-
-                if (curbutton.classList.contains("team-acco__item--active")) {
-                    //contains переводится как: текущий элемент содержит в себе такой класс
-                    curbutton.classList.remove ('team-acco__item--active');
-                    //при помощи remove мы удаляем класс в скобках
-                    content.style.height = 0;
-                }
-                else {
-                    //сначала закрываем все открытые item (см. функцию)
-                    closeItems(buttons);
-                    //потом открываем то что хотим
-                    curbutton.classList.add ('team-acco__item--active');
-                    const windowSize = document.documentElement.clientWidth;
-                    console.log (windowSize);
-                    if (windowSize>768) {
-                        if (reqHeight<100) {
-                            content.style.height = "100px"; //100px это высота фотки
-                        }
-                        else {
-                            content.style.height = `${reqHeight}px`;
-                        }
-                    } else {
-                        content.style.height = `${reqHeight+100}px`;
-                    }
-                    // if (reqHeight<100) {
-                    // content.style.height = "100px";
-                    // }
-                    // else {
-                    //     content.style.height = `${reqHeight}px`;
-                    // }
-                }
-
-                // console.log (event.currentTarget); вернет тот элемент для которого обработчик и предназначается т.е button (.team-acco__trigger)
-                // console.log (event.target); target вернет фактический элемент на котором было произведено событие т.е span
-            })
-        }
-        function closeItems(buttons) {
-            Array.from(buttons).forEach(function (elem) {
-                elem.classList.remove ('team-acco__item--active');
-                elem.querySelector('.team-acco__content').style.height = 0;
-            });
-        }
-
-    </script>
-    <!-- script для меню (слайдер) -->
-    <script>
-        const leftBtn = document.querySelector ("#arrow-left");
-        const rightBtn = document.querySelector ("#arrow-right");
-        const items = document.querySelector ("#price__items");
-        //getComputedStyle - глобальная ф-ия кот возвращает объект кот хранит в себе все-все свойства элемента
-        // const computed = getComputedStyle (items);
-        // computed.right возвращает свойство right = '100px' чтобы избавиться от 'px' существует глобальная ф-я которая делает из строки число!
-        // let styleRight = parseInt (computed.right);
-        const item = document.querySelectorAll (".price__item");
-        const slider = document.querySelector ("#slider");
-        const sliderWidth = slider.getBoundingClientRect().width;
-
-        //Функция снизу возвращает ширину экрана именно при сжатии или расширении его
-        // window.addEventListener ('resize', function (params) {
-        //     const windowSize = document.documentElement.clientWidth;
-        //     console.log (windowSize);
-        // });        
-
-        Array.from(item).forEach(function (elem) {
-            elem.style.width = `${sliderWidth}px`;
-        });
-
-        const step = items.firstElementChild.getBoundingClientRect().width;
-        const maxRight = (items.children.length - 1)*step;
-        const minLeft = 0;
-        let currentRight = 0;
-        
-        rightBtn.addEventListener ('click', function (event) {
-            event.preventDefault();
-            
-            if (currentRight < maxRight) {
-                currentRight = currentRight + step;
-                items.style.right = `${currentRight}px`;
-            }
-            else {
-                currentRight = 0;
-                items.style.right = 0;
-            };
-        }); 
-        leftBtn.addEventListener ('click', function (event) {
-            event.preventDefault();
-
-            if (currentRight > minLeft) {
-                currentRight -= step;
-                items.style.right = `${currentRight}px`;
-            }
-            else {
-                currentRight = maxRight;
-                items.style.right = `${maxRight}px`;
-            };
-        });     
-    </script>
+    <script src="./js/verticalAcco.js"></script>
+    <!-- script для прайса (слайдер) -->
+    <script src="./js/slider.js"></script>
     <!-- template для отзывов -->
     <script type="template" id="reviews-modal"> 
         <div class="overlay">
@@ -817,63 +850,7 @@
         </div>
     </script>
     <!-- script для отзывов -->
-    <script> 
-        const reviewsBtn = document.querySelectorAll('#reviewsBtn');
-        const template = document.querySelector ('#reviews-modal').innerHTML;
-
-        for (const reviewsBtns of reviewsBtn) {
-            reviewsBtns.addEventListener  ('click', function (params) {
-
-                // получаем доступ в контейнер в котором хранится весь контент отзыва на который нажали. Затем извлекаем из этого контейнера имя отзыва и его текст:
-                const reviewsItemHover = params.currentTarget.parentElement.parentNode; // для определения родителя можно использовать  parentElement или parentNode, нет никакой разницы
-                // const reviewsContent = reviewsItemHover.innerHTML;
-                const reviewsItemTitle = reviewsItemHover.firstElementChild;
-                const reviewsItemText = reviewsItemHover.querySelector ('.reviews__text');
-
-                // создаем div кладем даем ему класс кладем в него шаблон модалки и все это закидываем в wrapper__content
-                const wrapperContent = document.querySelector ('.wrapper__content')
-                const container = document.createElement ('div');
-                container.className = 'popup';
-                container.innerHTML = template;
-                wrapperContent.appendChild (container);
-
-                // Клонируем тот отзыв и его заголовок на который нажали в новые переменные и закидываем в выше созданный div а именно в popup__content иначе если бы 
-                // мы appendChild те элементы которые взяли со страницы то они бы удалились со страницы а так мы их только копируем
-                const containerContent = container.querySelector ('.popup__content');
-                const reviewsItemTitleClone = reviewsItemTitle.cloneNode(true);
-                const reviewsItemTextClone = reviewsItemText.cloneNode(true);
-
-                // containerContent.innerHTML = reviewsContent;
-                containerContent.appendChild (reviewsItemTitleClone);
-                containerContent.appendChild (reviewsItemTextClone);
-
-                // навешиваем на все тот же div классы "opened" и "popup--reviews"
-                container.classList.add ('popup--reviews');
-                container.classList.add ('opened');
-
-                // запрещаем скролл
-                document.body.style.overflow = 'hidden';
-
-                // навешиваем обработчик на кнопку close и при закрытии возвращаем контент отзыва обратно на страницу
-                const closeBtn = container.querySelector ('.popup__close');
-                closeBtn.addEventListener ('click', function () {
-                    wrapperContent.removeChild (container);
-                    document.body.style.overflow = '';
-
-                    //Ниже мы пытались вернуть контент на страницу при закрытии модалки потому что сначала мы делали appendChild а не клонировали
-                    // reviewsItemHover.appendChild (reviewsItemTitle); appendChild добавляет в конец
-                    // reviewsItemHover.insertBefore (reviewsItemTitle, reviewsItemHover.firstChild); //insertBefore добавляет первый элемент в скобках перед вторым элементом в скобках
-                    // reviewsItemHover.insertBefore (reviewsItemText, reviewsItemTitle.nextSibling); // добавляет после конкретного элемента
-                    
-                })
-
-            })
-
-            
-
-        }
-        
-    </script>
+    <script src="./js/reviews.js"></script>
 
     <!-- script для реализации модалки гамбургер несколькими способами -->
     <!-- Сейчас будем реализовывать всплывашку (модалку):
@@ -964,104 +941,9 @@
 
     <!-- scriptы для карты -->
     <script src="https://api-maps.yandex.ru/2.1/?apikey=<67c0fbb7-596a-473a-a053-4841395dbfe1>&lang=ru_RU" type="text/javascript"></script>
-    <script>
-        let myMap;
-        ymaps.ready (function () {
-            myMap = new ymaps.Map ('myMapId', {
-                center: [59.93, 30.3],
-                zoom: 10
-            });
-
-            let myPlacemark1 = new ymaps.Placemark ([59.896, 30.295], {}, {
-                iconImageHref: `./svg/icons/map-marker.svg`,
-                iconImageSize: [195, 60]
-            });
-            myMap.geoObjects.add(myPlacemark1);  
-        });
-    </script>
+    <script src="./js/map.js"></script>
 
     <!-- script для реализации заказа через форму -->
-    <script>
-        const myForm = document.querySelector ('.form');
-        const send = document.querySelector ('#send');
-
-        send.addEventListener ('click', function (event) {
-            event.preventDefault ();
-            if (validateForm(myForm)) {
-
-                let formData = new FormData();
-                formData.append ("name", myForm.elements.name.value);
-                formData.append ("phone", myForm.elements.phone.value);
-                formData.append ("comment", myForm.elements.comment.value);
-                formData.append ("to", "695amr@mail.ru");
-
-                let url = "https://webdev-api.loftschool.com/sendmail"
-
-                const xhr = new XMLHttpRequest ();
-                xhr.responseType = 'json';
-                xhr.open ('POST', url);
-                xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
-                xhr.send (formData);
-
-                xhr.addEventListener ('load', function () {
-                    const template = document.querySelector ('#reviews-modal').innerHTML;
-                    const wrapperContent = document.querySelector ('.wrapper__content')
-                    const container = document.createElement ('div');
-                    container.className = 'popup';
-                    container.innerHTML = template;
-                    wrapperContent.appendChild (container);
-                    
-                    // const container  = createElem();
-
-                    container.classList.add ('popup--reviews');
-                    container.classList.add ('opened');
-                    const popupText = container.querySelector ('.popup__text');
-                    popupText.textContent = `${xhr.response.message}`;
-                    document.body.style.overflow = 'hidden';
-
-                    const closeBtn = container.querySelector ('.popup__close');
-                    closeBtn.addEventListener ('click', function () {
-                        wrapperContent.removeChild (container);
-                        document.body.style.overflow = '';
-                    })
-                })
-            }
-        })
-
-        // function createElem () {
-        //     const template = document.querySelector ('#reviews-modal').innerHTML;
-        //     const wrapperContent = document.querySelector ('.wrapper__content')
-        //     const container = document.createElement ('div');
-        //     container.className = 'popup';
-        //     container.innerHTML = template;
-        //     wrapperContent.appendChild (container);
-        //     return container
-        // };
-
-        function validateForm (form) {
-            let valid = true;
-
-            if (!validateField (form.elements.name)) {
-                valid = false;
-            }
-            if (!validateField (form.elements.phone)) {
-                valid = false;
-            }
-            if (!validateField (form.elements.comment)) {
-                valid = false;
-            }
-            return valid;
-        }
-        
-        function validateField (field) {
-            if (!field.checkValidity()) {
-                field.nextElementSibling.textContent = field.validationMessage;
-                return false;
-            } else {
-                field.nextElementSibling.textContent = '';
-                return true;
-            }
-        }
-    </script>
+    <script src="./js/form.js"></script>
 </body>
 </html>

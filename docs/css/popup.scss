@@ -37,7 +37,36 @@
         max-height: 100%;
     }
     .popup__close {
-        background-color: red;
+        background-color: transparent;
+        right: 0;
+        top: 0;
+        position: absolute;
+        border-radius: 50%;
+        transform: rotate(45deg);
+    }
+    .popup__close:before {
+        content: "";
+        display: block;
+        width: 4px;
+        height: 30px;
+        left: 50%;
+        border-radius: 2px;
+        transform: translateX(-50%);
+        background-color: $orange;
+        position: absolute;
+        opacity: .7;
+    }
+    .popup__close:after {
+        content: "";
+        display: block;
+        width: 30px;
+        height: 4px;
+        top: 50%;
+        border-radius: 2px;
+        transform: translateY(-50%);
+        background-color: $orange;
+        position: absolute;
+        opacity: .7;
     }
 }
 
@@ -61,11 +90,12 @@
 
 .popup__close {
     position: absolute;
-    right: -15px;
-    top: -15px;
+    right: 15px;
+    top: 15px;
     width: 30px;
     height: 30px;
     background-color: #fff;
+    cursor: pointer;
 }
 
 .popup__logo {
