@@ -461,7 +461,8 @@
     }
     &--comment {
         resize: none;
-        height: rem(110px);
+        height: 16vh;
+        max-height: 112px;
     }
 }
 
@@ -614,9 +615,10 @@
     }
     .form__col {
         margin: 0;
+        flex: unset;
     }
-    .form__row:last-child {
-        margin-bottom: 20px;
+    .form__row, .form__row:last-child {
+        margin-bottom: 5px;
     }
     .pagination {
         display: none;

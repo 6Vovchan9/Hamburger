@@ -43,7 +43,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    transform: translateY(-100%);
+    // transform: translateY(-100%);
     display: flex;
     align-items: flex-start;
 }
@@ -110,7 +110,7 @@ td:nth-child(3) {
     position: absolute;
     left: 0;
     bottom: 0;
-    transform: translateY(100%);
+    // transform: translateY(100%);
     display: flex;
     flex-direction: column;
     color: #fff;
@@ -171,6 +171,6 @@ td:nth-child(3) {
     .price__burger-calories {
         bottom: 100%;
         left: 100%;
-        transform: translateX(-100%);
+        transform: translate(-100%, 100%);
     }
 }

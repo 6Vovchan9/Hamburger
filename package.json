@@ -1,0 +1,27 @@
+{
+  "name": "Hamburger",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "gulp": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/6Vovchan9/Hamburger.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/6Vovchan9/Hamburger/issues"
+  },
+  "homepage": "https://github.com/6Vovchan9/Hamburger#readme",
+  "devDependencies": {
+    "gulp": "^4.0.0",
+    "gulp-rm": "^2.0.0"
+  }
+}
