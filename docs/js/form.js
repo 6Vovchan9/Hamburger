@@ -44,15 +44,15 @@ send.addEventListener ('click', function (event) {
     }
 })
 
-// function createElem () {
-//     const template = document.querySelector ('#reviews-modal').innerHTML;
-//     const wrapperContent = document.querySelector ('.wrapper__content')
-//     const container = document.createElement ('div');
-//     container.className = 'popup';
-//     container.innerHTML = template;
-//     wrapperContent.appendChild (container);
-//     return container
-// };
+function createElem () {
+    const template = document.querySelector ('#reviews-modal').innerHTML;
+    const wrapperContent = document.querySelector ('.wrapper__content')
+    const container = document.createElement ('div');
+    container.className = 'popup';
+    container.innerHTML = template;
+    wrapperContent.appendChild (container);
+    return container
+};
 
 function validateForm (form) {
     let valid = true;

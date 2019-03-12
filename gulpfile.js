@@ -197,10 +197,162 @@
 //чтобы при каждом изменении в каком либо файле scss не создавать новый общий css файл вручную нужно добавить слежку за файлами для этого есть спец метод watch
 // для начала подключим его в gulp: const { src, dest, task, series, watch} = require('gulp');
 
+// const { src, dest, task, series, watch} = require('gulp');
+// const rm = require( 'gulp-rm' );
+// const sass = require('gulp-sass');
+// const concat = require('gulp-concat');
+
+// sass.compiler = require('node-sass');
+
+// const styles = [
+//     './node_modules/normalize.css/normalize.css',
+//     './docs/css/styles-gulp.scss'
+// ]
+
+// task( 'clean', function() {
+//   return src( './docs/css/styles-gulp.css', { read: false }).pipe( rm() );
+// });
+
+// task ('styles', function () {
+//     return src(styles) 
+//     .pipe(concat('styles-gulp.scss'))
+//     .pipe(sass().on('error', sass.logError))
+//     .pipe(dest('./docs/css'));
+// });
+
+// watch('./docs/css/*.scss', series('styles')); //будем следить за конкретным файлом и затем когда произойдет изменение мы будем вызывать task styles
+// task('default', series('clean', 'styles'));
+
+//запустим галп npm run gulp при каждом запуске vscode иначе изменения не вступят в силу!!!!!!
+
+
+//---------------------------------------------------------------------------------------------
+
+//для того чтобы не делать кучу @import для каждого файла (блока html) можно поручить эту услугу галпу  в этом нам поможет такое расширение gulp-sass-glob
+//установим плагин npm install gulp-sass-glob --save-dev далее сделаем реквайр файла галп.js: var sassGlob = require('gulp-sass-glob');
+//далее вызовим этот плагин после того как склеим все файлы в один входной
+
+// const { src, dest, task, series, watch} = require('gulp');
+// const rm = require( 'gulp-rm' );
+// const sass = require('gulp-sass');
+// const concat = require('gulp-concat');
+// const sassGlob = require('gulp-sass-glob');
+
+// sass.compiler = require('node-sass');
+
+// const styles = [
+//     './node_modules/normalize.css/normalize.css',
+//     './docs/css/styles-gulp.scss'
+// ]
+
+// task( 'clean', function() {
+//   return src( './docs/css/styles-gulp.css', { read: false }).pipe( rm() );
+// });
+
+// task ('styles', function () {
+//     return src(styles) 
+//     .pipe(concat('styles-gulp.scss'))
+//     .pipe(sassGlob())
+//     .pipe(sass().on('error', sass.logError))
+//     .pipe(dest('./docs/css'));
+// });
+
+// watch('./docs/css/*.scss', series('styles'));
+// task('default', series('clean', 'styles'));
+
+// теперь можем импортировать все файлы через один @import "./docs/css/*.scss" таким образом
+// но я не стал подключать это в свой проект потому что когда делаешь эту процедуру для готового проекта то за счет того что в таком случае стили подгружаются
+//в такой последовательности как они сложены в папке а не так как были при множественном импорте. И изза этой смены порядка страница выглядит подругому
+//---------------------------------------------------------------------------------------------
+
+//подключение автопрефикса для тех свойств которые требуют префиксы:
+
+//npm install --save-dev gulp-autoprefixer
+
+//подключим вызов этого плагина в поток после того как scss станет обычным css так как автопрефиксер работает только с css
+
+// const { src, dest, task, series, watch} = require('gulp');
+// const rm = require( 'gulp-rm' );
+// const sass = require('gulp-sass');
+// const concat = require('gulp-concat');
+// const autoprefixer = require('gulp-autoprefixer');
+
+// sass.compiler = require('node-sass');
+
+// const styles = [
+//     './node_modules/normalize.css/normalize.css',
+//     './docs/css/styles-gulp.scss'
+// ]
+
+// task( 'clean', function() {
+//   return src( './docs/css/styles-gulp.css', { read: false }).pipe( rm() );
+// });
+
+// task ('styles', function () {
+//     return src(styles) 
+//     .pipe(concat('styles-gulp.scss'))
+//     .pipe(sass().on('error', sass.logError))
+//     .pipe(autoprefixer({
+//         browsers: ['last 2 versions'],
+//         cascade: false // каскад делает какие то пробелы
+//     }))
+//     .pipe(dest('./docs/css'));
+// });
+
+// watch('./docs/css/*.scss', series('styles'));
+// task('default', series('clean', 'styles'));
+
+//---------------------------------------------------------------------------------------------
+
+//плагин группирующий одинаковые медиа-запросы например чтобы  написанные многократно @media(max-width: 768px) { } не занимали много места их можно сгруппировать
+
+//npm install --save-dev gulp-group-css-media-queries
+//
+
+// const { src, dest, task, series, watch} = require('gulp');
+// const rm = require( 'gulp-rm' );
+// const sass = require('gulp-sass');
+// const concat = require('gulp-concat');
+// const autoprefixer = require('gulp-autoprefixer');
+// const gcmq = require('gulp-group-css-media-queries');
+
+// sass.compiler = require('node-sass');
+
+// const styles = [
+//     './node_modules/normalize.css/normalize.css',
+//     './docs/css/styles-gulp.scss'
+// ]
+
+// task( 'clean', function() {
+//   return src( './docs/css/styles-gulp.css', { read: false }).pipe( rm() );
+// });
+
+// task ('styles', function () {
+//     return src(styles) 
+//     .pipe(concat('styles-gulp.scss'))
+//     .pipe(sass().on('error', sass.logError))
+//     .pipe(autoprefixer({
+//         browsers: ['last 2 versions'],
+//         cascade: false 
+//     }))
+//     .pipe(gcmq()) //вызываем в любой момент в этом таске главное чтобы после scss
+//     .pipe(dest('./docs/css'));
+// });
+
+// watch('./docs/css/*.scss', series('styles'));
+// task('default', series('clean', 'styles'));
+
+//---------------------------------------------------------------------------------------------
+//итоговый проект можно сжать при помощи нужного плагина который удалит пробелы комментарии и тд
+//вызываем этот плагин в таске после всех обработок но перед тем как записываем в папку (перед dest)
+
 const { src, dest, task, series, watch} = require('gulp');
 const rm = require( 'gulp-rm' );
-var sass = require('gulp-sass');
-var concat = require('gulp-concat');
+const sass = require('gulp-sass');
+const concat = require('gulp-concat');
+const autoprefixer = require('gulp-autoprefixer');
+const gcmq = require('gulp-group-css-media-queries');
+const cleanCSS = require('gulp-clean-css');
 
 sass.compiler = require('node-sass');
 
@@ -217,10 +369,14 @@ task ('styles', function () {
     return src(styles) 
     .pipe(concat('styles-gulp.scss'))
     .pipe(sass().on('error', sass.logError))
+    .pipe(autoprefixer({
+        browsers: ['last 2 versions'],
+        cascade: false 
+    }))
+    .pipe(gcmq())
+    .pipe(cleanCSS())//{compatibility: 'ie8'} это для старых браузеров. Можно удалить
     .pipe(dest('./docs/css'));
 });
 
-watch('./docs/css/*.scss', series('styles')); //будем следить за конкретным файлом и затем когда произойдет изменение мы будем вызывать task styles
+watch('./docs/css/*.scss', series('styles'));
 task('default', series('clean', 'styles'));
-
-//запустим галп npm run gulp при каждом запуске vscode иначе изменения не вступят в силу!!!!!!
