@@ -1,1 +1,1 @@
-# Hamburger of Tishenko Vladimir
+# Hamburger
